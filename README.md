@@ -1,4 +1,5 @@
 ﻿**Naziv Tima:** *Tim 26-Dinamicni Duo*
+
 **Članovi Tima:**
 
 Ime i Prezime 1. člana tima: *Omerović Adina*
@@ -7,9 +8,9 @@ Ime i Prezime 2. člana tima: *Đonlagić Nedim*
 
 Ime i Prezime 3. člana tima: *Hodžić Hamdija*
 
-#Naziv teme: *Residence Inn - Enjoy your stay*
+# Naziv teme: *Residence Inn - Enjoy your stay*
 
-##Opis teme: Pomoć pri pronalasku odgovarajućeg mjesta za Vaš boravak. 
+## Opis teme: Pomoć pri pronalasku odgovarajućeg mjesta za Vaš boravak. 
 
 Svrha sistema je da korisnicima, kroz aplikaciju, pomognu pri pronalasku mjesta za boravak koje odgovara njihovim potrebama i zahtjevima.
 Naša aplikacija prikazuje sav slobodan smještaj za odabranu lokaciju, fotografije samog smještaja kao i cijene i sve ostale potrebne 
@@ -21,7 +22,7 @@ Razlog korištenja našeg sistema je olakšan i brži pristup svim slobodnim i r
 je bitno brzo i jednostavno doći do potrebnih informacija. Naš sistem, uz veliku bazu raspoloživih smještaja, nudi upravo takav način planiranja
 Vašeg boravka. 
 
-##Procesi:
+## Procesi:
 
 Prilikom pokretanja aplikacije, korisnik ima opciju registracije, logina, pretrage smještaja i pregleda najnovijih objava.
 Ukoliko korisnik želi da se registruje, potrebno je da unese svoju e-mail adresu, korisničko ime i šifru. Nakon toga sistem šalje mail
@@ -41,7 +42,7 @@ smještaj budu izuzetno loši ili ukoliko je objava prijavljena kao lažna, admi
 kao nevažeći. Nakon toga, administrator može stupiti u kontakt sa korisnikom u cilju provjere informacija, ili u krajnjem slučaju ukloniti
 objavu i obrisati korisnika čija je objava. 
 
-##Funkcionalnosti:
+## Funkcionalnosti:
 
 - Mogućnost prijave u sistem sa različitim privilegijama
 - Mogućnost registracije
@@ -64,7 +65,7 @@ tvorcu aplikacije)
 - Sponzorisane objave se prikazuju među prvim prilikom definisanja kriterija pretrage
 - Mogućnost pregleda lokacija smještaja na mapi korištenjem GPS sistema
 
-##Akteri:
+## Akteri:
 
 **Korisnici sistema:**
  - Registrovani korisnik - ima mogućnost objave/ažuriranja/brisanja svog oglasa, kao i ostavljanja dojma, također i potražnje smještaja

@@ -1,0 +1,43 @@
+1.Princip pojedinacne odgovornosti
+Princip pojedinacne odgovornosti ( eng. Single Responsibility Principle-SRP) glasi:
+KLASA BI TREBALA IMATI SAMO JEDAN RAZLOG ZA PROMJENU.
+
+Nije ispunjen princip zato što u klasama Registracija, Registrovani korisnik, Prijava, Placanje imamo metode verifikacija koje bismo mogli
+odvojiti u posebnu klasu Verifikacija sa razlicitim metodama za svaku navedenu klasu.
+
+2.Otvoreno zatvoren princip
+Otvoreno zatvoren princip ( eng. Open Closed Principle-OCP) glasi:
+ENTITETI SOFTVERA (KLASE, MODULI, FUNKCIJE) TREBALI BI BITI OTVORENI ZA
+NADOGRADNJU, ALI ZATVORENI ZA MODIFIKACIJE
+
+
+
+3. Liskov princip zamjene
+Liskov princip zamjene (eng. Liskov Substitution Principle-LSP) glasi:
+PODTIPOVI MORAJU BITI ZAMJENJIVI NJIHOVIM OSNOVNIM TIPOVIMA.
+
+Nije ispunjen Liskov princip. Imamo baznu apstraktnu klasu Osoba iz koje se naslijedjuju klase Admin i RegistrovaniKorisnik. Obje izvedene 
+klase dijele atribute bazne klase koja nema nikakvih metoda, zbog kojih bi moglo doci do narusavanja principa. Takodjer imamo klasu Oglas iz
+koje se naslijedjuju klase RezervisaniOglasi i SponzorisaniOglasi i dijele metodu rezervisi. Tu nastaje problem kod klase RezervisaniOglasi 
+jer ona ne bi trebala imati metodu rezrvisi koju ima bazna klasa Oglasi, vec objekat tipa Oglas kada se rezervise treba da postane objekat 
+tipa RezervisaniOglas,tako da klasa RezervisaniOglas se ne bi trebala naslijedjviati iz klase Oglasi.
+
+4.Princip inverzije ovisnosti
+Princip inverzije ovisnosti (eng. Dependency Inversion Principle-DIP) glasi:
+A. MODULI VISOKOG NIVOA NE BI TREBALI OVISITI OD MODULA NISKOG NIVOA.
+OBA BI TREBALO DA OVISE OD APSTRAKCIJA.
+B. MODULI NE BI TREBALI OVISITI OD DETALJA. DETALJI BI TREBALI BITI OVISNI OD
+APSTRAKCIJA
+
+Ovaj princip takoder nije uspunjen. Razlog je taj što bazna klasa Osoba bi trebala biti apstraktna ( posmatrali smo je kao apstraktnu ali
+smo zaboravili na dijagramu oznaciti kao apstraktnu ). Klasa Oglasi bi trebala biti naslijedena iz apstraktne bazne klase npr. BazniOglasi
+koja bi imala iste atribute kao naša klasa Oglasi bez metode rezerviši. Tada bi klase Oglasi, RezervisaniOglasi i SponzorisaniOglasi 
+naslijedvali tu apstraktnu klasu te bi metodu rezerviši implemetirale klase SponzorisaniOglasi i Oglasi, dok klasa RezervisaniOglasi ne bi 
+imala tu metodu vec samo atrbiute i svoje metode.
+
+
+5.Princip izoliranja interfejsa
+Princip izoliranja interfejsa ( eng. Interface Segregation Principle-ISP) glasi:
+KLIJENTI NE TREBA DA OVISE O METODAMA KOJE NECE UPOTREBLJAVATI.
+
+Posmatrajuci prethodne principe i ispravke koje bi trebali napraviti kako bi oni bili zadovoljeni, ovaj princip ce tada biti ispunjen.

@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="7a75b24d-e7ba-4585-a331-291ca667bfa1"
-    Publisher="CN=general"
+    Name="68d4e3e1-f409-4a70-ad99-5ec0da419d74"
+    Publisher="CN=nedim"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="7a75b24d-e7ba-4585-a331-291ca667bfa1" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="68d4e3e1-f409-4a70-ad99-5ec0da419d74" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>ResidenceInnEnjoyYourStay</DisplayName>
-    <PublisherDisplayName>general</PublisherDisplayName>
+    <PublisherDisplayName>nedim</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

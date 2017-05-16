@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="ResidenceInnEnjoyYourStay.ForgotPass"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ResidenceInnEnjoyYourStay"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="831.286">
+
+    <Grid  >
+        <Image Source="Assets/night1.jpg" Stretch="Fill" />
+
+
+        <SplitView HorizontalAlignment="Right" Height="35" Margin="0,0,0,0" VerticalAlignment="Top" Width="790" Background="WhiteSmoke" BorderBrush="Transparent">
+            <SplitView.Pane>
+                <Grid/>
+            </SplitView.Pane>
+            <StackPanel HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="248">
+                <Button x:Name="button1" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" HorizontalAlignment="Left" Height="29" Margin="10,0,0,0" Width="45" Background="Transparent" Click="button1_Click"/>
+                <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="24" Margin="60,-25,0,0" TextWrapping="Wrap" Text="Početna" Width="100"/>
+            </StackPanel>
+
+
+        </SplitView>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="29" Margin="40,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="388" PlaceholderText="e-mail address" FontStyle="Italic"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="35" Margin="40,90,0,0" TextWrapping="Wrap" Text="Forgot your password?" VerticalAlignment="Top" Width="300" FontSize="25" FontWeight="Black"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="57" Margin="40,150,0,0" TextWrapping="Wrap" Text="Please enter the email adress registered on your account." VerticalAlignment="Top" Width="467" FontSize="18"/>
+        <Button x:Name="button" Content="Reset password" HorizontalAlignment="Left" Height="38" Margin="40,230,0,0" VerticalAlignment="Top" Width="388" BorderBrush="Black" Background="WhiteSmoke" />
+        <SplitView HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="44" Background="WhiteSmoke" BorderBrush="Transparent">
+            <SplitView.Pane>
+                <Grid/>
+            </SplitView.Pane>
+            <Button x:Name="button2" FontFamily ="Segoe MDL2 Assets" Content="&#xE0C4;" HorizontalAlignment="Left" Height="35" Margin="5,0,0,0" VerticalAlignment="Top" Width="35" Background="Transparent" FontSize="15" Click="button2_Click"/>
+        </SplitView>
+
+
+    </Grid>
+</Page>

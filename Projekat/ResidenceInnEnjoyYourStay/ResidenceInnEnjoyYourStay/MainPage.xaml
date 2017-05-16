@@ -5,10 +5,46 @@
     xmlns:local="using:ResidenceInnEnjoyYourStay"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+     xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d" Width="834.197">
 
+    <Grid  >
+        
+        <Image Source="Assets/night1.jpg" Stretch="Fill" />
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-      
+        <SplitView HorizontalAlignment="Left" Height="35" Margin="0,0,0,0" VerticalAlignment="Top" Width="373" Background="WhiteSmoke" BorderBrush="Transparent">
+            <SplitView.Pane>
+                <Grid/>
+            </SplitView.Pane>
+            <StackPanel HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="248">
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="29" Margin="10,2,0,0" TextWrapping="Wrap" Text="" Width="228" PlaceholderText="Traži hotel" FontStyle="Oblique" BorderBrush="Transparent"  SelectionHighlightColor="LightBlue" />
+                <Button x:Name="button"  FontFamily="Segoe MDL2 Assets"  Content = "&#xE094;" HorizontalAlignment="Left" Height="27" Margin="190,-30,0,0" Width="50" Background="Transparent"/>
+                <StackPanel Height="29" Width="200" Margin="615,-35,0,0">
+                    <Button x:Name="LoginRegister"   FontFamily="Segoe MDL2 Assets"  Content = "&#xE094;"   Width="100" Height="29" Background="Transparent" Margin="0,0,0,0" HorizontalAlignment="Right"/>
+                </StackPanel>
+
+            </StackPanel>
+
+        </SplitView>
+        <SplitView Height="35" Margin="373,0,0,0" VerticalAlignment="Top" Background="WhiteSmoke" BorderBrush="Transparent">
+            <SplitView.Pane>
+                <Grid/>
+            </SplitView.Pane>
+            <Button x:Name="button1" Content="Login/Register" FontStyle="Oblique" HorizontalContentAlignment="Right" FontWeight="Medium" Foreground="DarkRed" HorizontalAlignment="Left" Height="35" Margin="320,0,0,0" VerticalAlignment="Top" Width="122" Background="Transparent" Click="button1_Click"/>
+        </SplitView>
+        
+        <Maps:MapControl HorizontalAlignment="Left" Height="250" Margin="10,320,0,0" VerticalAlignment="Top" Width="414"  BusinessLandmarksVisible="True" LandmarksVisible="True"  MapServiceToken="YEQFMWAVjF4Iu91p0wyj~RelW8it8t3jIg90ou8-EuQ~AqgHYFSq5bzGjAvlJRlbaT0XAX1p8kd7rfVjJ7eRhGqhaz7T_kwxf3gZ7vrsh-Ob"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="50,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" PlaceholderText="Location" FontStyle="Italic"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="50,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" PlaceholderText="Max. price" FontStyle="Italic"/>
+        <CalendarDatePicker HorizontalAlignment="Left" Margin="200,100,0,0" VerticalAlignment="Top" />
+        <CalendarDatePicker HorizontalAlignment="Left" Margin="200,167,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="50,234,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Button x:Name="button2" FontFamily="Segoe MDL2 Assets" Content="&#xE094;" HorizontalAlignment="Left" Margin="290,234,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.369,-0.5" FontWeight="Black" Background="Transparent"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="29" Margin="50,70,0,0" TextWrapping="Wrap" Text="Lokacija" VerticalAlignment="Top" Width="71" FontWeight="Black"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="29" Margin="50,138,0,0" TextWrapping="Wrap" Text="Maksimalna cijena" VerticalAlignment="Top" Width="150" FontWeight="Black"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="29" Margin="50,204,0,0" TextWrapping="Wrap" Text="Broj osoba" VerticalAlignment="Top" Width="80" FontWeight="Black"/>
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="29" Margin="200,70,0,0" TextWrapping="Wrap" Text="Datum prijave" VerticalAlignment="Top" Width="120" FontWeight="Black"/>
+        <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="29" Margin="200,139,0,0" TextWrapping="Wrap" Text="Datum odjave" VerticalAlignment="Top" Width="120" FontWeight="Black"/>
+        <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Height="28" Margin="252,235,0,0" TextWrapping="Wrap" Text="Traži" VerticalAlignment="Top" Width="40" FontWeight="Black" FontStyle="Italic"/>
     </Grid>
 </Page>

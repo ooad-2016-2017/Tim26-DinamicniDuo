@@ -79,4 +79,3 @@ namespace ResidenceInnEnjoyYourStay.Pomocne
         #endregion Protected Methods
     }
 }
-

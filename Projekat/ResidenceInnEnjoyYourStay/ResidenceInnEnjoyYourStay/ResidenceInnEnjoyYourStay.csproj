@@ -28,6 +28,8 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <UseDotNetNativeToolchain>false</UseDotNetNativeToolchain>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -89,13 +91,14 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="ClassDiagram1.cd" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContentPage.cs" />
+
     <Compile Include="ForgotPass.xaml.cs">
       <DependentUpon>ForgotPass.xaml</DependentUpon>
     </Compile>
@@ -105,19 +108,19 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pomocne\MainViewModelBase.cs" />
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\BazniOglasi.cs" />
+    <Compile Include="Models\Oglasi.cs" />
+    <Compile Include="Models\Osoba.cs" />
+    <Compile Include="Models\RegistrovaniKorisnik.cs" />
+    <Compile Include="Models\RezervisaniOglasi.cs" />
+    <Compile Include="Models\SponzorisaniOglasi.cs" />
     <Compile Include="MojaKontrola.xaml.cs">
       <DependentUpon>MojaKontrola.xaml</DependentUpon>
     </Compile>
     <Compile Include="Neka.cs" />
-    <Compile Include="PregledObjavaAdmin.xaml.cs">
-      <DependentUpon>PregledObjavaAdmin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RezervacijaSmjestaja.xaml.cs">
-      <DependentUpon>RezervacijaSmjestaja.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PregledKorNal.xaml.cs">
-      <DependentUpon>PregledKorNal.xaml</DependentUpon>
-    </Compile>
+
     <Compile Include="pregledNalogaAdmin.xaml.cs">
       <DependentUpon>pregledNalogaAdmin.xaml</DependentUpon>
     </Compile>
@@ -130,6 +133,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="Views\LoginViewModel.xaml.cs">
+      <DependentUpon>LoginViewModel.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -201,7 +208,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\LoginViewModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

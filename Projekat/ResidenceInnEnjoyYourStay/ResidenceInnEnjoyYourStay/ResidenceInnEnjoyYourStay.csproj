@@ -98,7 +98,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pomocne\DelegateCommand.cs" />
+
     <Compile Include="ForgotPass.xaml.cs">
       <DependentUpon>ForgotPass.xaml</DependentUpon>
     </Compile>
@@ -120,8 +120,7 @@
       <DependentUpon>MojaKontrola.xaml</DependentUpon>
     </Compile>
     <Compile Include="Neka.cs" />
-    <Compile Include="Pomocne\NavigationService.cs" />
-    <Compile Include="Pomocne\RelayCommand.cs" />
+
     <Compile Include="pregledNalogaAdmin.xaml.cs">
       <DependentUpon>pregledNalogaAdmin.xaml</DependentUpon>
     </Compile>
@@ -147,7 +146,10 @@
     <None Include="ResidenceInnEnjoyYourStay_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\imagesuser.jpg" />
     <Content Include="Assets\night1.jpg" />
+    <Content Include="Assets\PayPal.png" />
+    <Content Include="Assets\soba2.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -178,6 +180,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <EmbeddedResource Include="PregledKorNal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RezervacijaSmjestaja.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PregledObjavaAdmin.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Page Include="pregledNalogaAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

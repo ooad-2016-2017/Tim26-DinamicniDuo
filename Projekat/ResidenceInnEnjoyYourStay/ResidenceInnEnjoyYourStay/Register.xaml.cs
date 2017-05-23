@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml;
+﻿using ResidenceInnEnjoyYourStay.Views;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -16,7 +17,7 @@ namespace ResidenceInnEnjoyYourStay
         }
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage), null);
+            this.Frame.Navigate(typeof(PocetnaStrana), null);
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)

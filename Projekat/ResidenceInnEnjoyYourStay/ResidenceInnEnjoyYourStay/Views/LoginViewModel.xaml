@@ -8,28 +8,29 @@
    mc:Ignorable="d" Width="834.197">
     <Page.DataContext>
         local:MainViewModelBase
+        local:Osoba
+        local:AdminViewModel
     </Page.DataContext>
-    
+
     <Grid Background="#FFDEDEDE">
-        
         <Image Source="Assets/night1.jpg" Stretch="Fill" />
         <StackPanel x:Name ="Login1" HorizontalAlignment="Left" Height="400" Margin="248,110,0,0" VerticalAlignment="Top" Width="333" Background="WhiteSmoke" BorderBrush="Black" BorderThickness="5" >
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="29" Margin="50,100,0,0" TextWrapping="Wrap" Text="{Binding User, Mode=TwoWay}"  Width="198" PlaceholderText="Username" FontStyle="Italic"/>
-            <PasswordBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="29"   Margin="50,35,0,0" Width="198" PlaceholderText="Password" PasswordChanged="{Binding Pass, Mode=TwoWay}" FontStyle="Italic" PasswordChar="*"/>
+            <TextBox x:Name="textBox" Text="{Binding User, Mode=TwoWay}" HorizontalAlignment="Left" Height="29" Margin="50,100,0,0" TextWrapping="Wrap"   Width="198" PlaceholderText="Username" FontStyle="Italic"/>
+            <PasswordBox x:Name="textBox_Copy" Password="{Binding Pass, Mode=TwoWay}" HorizontalAlignment="Left" Height="29"   Margin="50,35,0,0" Width="198" PlaceholderText="Password" FontStyle="Italic" PasswordChar="*"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="29" Margin="50,-220,0,0" TextWrapping="Wrap" Text="Korisničko ime" Width="150" RenderTransformOrigin="0.518,-4.183" FontStyle="Normal"/>
             <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="29" Margin="50,-80,0,0" TextWrapping="Wrap" Text="Šifra" Width="150" RenderTransformOrigin="0.518,-4.183" FontStyle="Normal"/>
             <TextBlock x:Name="Loginn" HorizontalAlignment="Left" Height="29" Margin="30,-340,0,0" TextWrapping="Wrap" Text="Login" Width="70" FontStyle="Normal" FontSize="15" FontWeight="SemiBold" />
-            <HyperlinkButton Content="Zaboravili ste šifru?" HorizontalAlignment="Left" Height="35" Margin="62,10,0,0" Width="198" Command="{Binding Path=AdminViewModel.ZaboraviliSifru}"/>
-            <Button x:Name="button" Content="Prijavi se" HorizontalAlignment="Left" Height="30" Margin="50,10,0,0" Width="198" Background="LightGray" BorderBrush="Black" Command="{Binding Path=AdminViewModel.Login}"/>
+            <HyperlinkButton Content="Zaboravili ste šifru?" Command="{Binding ZaboraviliSifru}" HorizontalAlignment="Left" Height="35" Margin="62,10,0,0" Width="198" />
+            <Button x:Name="button" Content="Prijavi se" Command="{Binding Login}" HorizontalAlignment="Left" Height="30" Margin="50,10,0,0" Width="198" Background="LightGray" BorderBrush="Black" />
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="29" Margin="30,20,0,0" TextWrapping="Wrap" Text="Nemate korisnički račun?" Width="170"/>
-            <HyperlinkButton Content="Registrujte se"  HorizontalAlignment="Left" Height="40" Margin="205,-41,0,0" Width="100" Command="{Binding Path=AdminViewModel.RegistrujSe}"  />
+            <HyperlinkButton Content="Registrujte se" Command="{Binding RegistrujSe}" HorizontalAlignment="Left" Height="40" Margin="205,-41,0,0" Width="100"   />
         </StackPanel>
         <SplitView HorizontalAlignment="Right" Height="35" Margin="0,0,0,0" VerticalAlignment="Top" Width="790" Background="WhiteSmoke" BorderBrush="Transparent">
             <SplitView.Pane>
                 <Grid/>
             </SplitView.Pane>
             <StackPanel HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="248">
-                <Button x:Name="button1" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" HorizontalAlignment="Left" Height="29" Margin="10,0,0,0" Width="45" Background="Transparent"/>
+                <Button x:Name="button1" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" HorizontalAlignment="Left" Height="29" Margin="10,0,0,0" Width="45" Background="Transparent" />
                 <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="24" Margin="60,-25,0,0" TextWrapping="Wrap" Text="Početna" Width="100"/>
             </StackPanel>
 

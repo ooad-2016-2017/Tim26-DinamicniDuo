@@ -14,7 +14,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
 {
     public class AdminViewModel
     {
-
+       
         INavigationService INS { get; set; }
         ICommand login
         {
@@ -32,8 +32,8 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
    
         public String AdminIme { get; set; }
         public String AdminSifra { get; set; }
-  
-        public List<RegistrovaniKorisnik> ListaKorisnika { get; set; }
+
+        public List<RegistrovaniKorisnik> ListaKorisnika = new List<RegistrovaniKorisnik>();
      
         public ICommand Login
         {
@@ -51,12 +51,9 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
  
         public AdminViewModel()
         {
-
-        
-
+            
             ListaKorisnika = new List<RegistrovaniKorisnik>();
        
-
             Login = new RelayCommand<object>(registrujAdmina, potvrdi);
      
 

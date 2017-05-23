@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ResidenceInnEnjoyYourStay.Pomocne;
 
-namespace OOAD1.ResidenceInnBaza.Models
+namespace ResidenceInnEnjoyYourStay.Models
 {
     public abstract class Osoba : MainViewModelBase
     {
@@ -107,6 +108,7 @@ namespace OOAD1.ResidenceInnBaza.Models
                 }
             }
         }
+        public Osoba() { }
         public Osoba(string im, string prez, DateTime datR, string us, string pass, string em)
         {
             Ime = im;
@@ -115,10 +117,6 @@ namespace OOAD1.ResidenceInnBaza.Models
             User = us;
             Pass = pass;
             DatumRodjenja = datR;
-        }
-        public Osoba()
-        {
-
         }
     }
 }

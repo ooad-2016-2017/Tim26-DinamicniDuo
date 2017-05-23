@@ -20,7 +20,7 @@
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="29" Margin="50,-220,0,0" TextWrapping="Wrap" Text="Korisničko ime" Width="150" RenderTransformOrigin="0.518,-4.183" FontStyle="Normal"/>
             <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="29" Margin="50,-80,0,0" TextWrapping="Wrap" Text="Šifra" Width="150" RenderTransformOrigin="0.518,-4.183" FontStyle="Normal"/>
             <TextBlock x:Name="Loginn" HorizontalAlignment="Left" Height="29" Margin="30,-340,0,0" TextWrapping="Wrap" Text="Login" Width="70" FontStyle="Normal" FontSize="15" FontWeight="SemiBold" />
-            <HyperlinkButton Content="Zaboravili ste šifru?" Command="{Binding ZaboraviliSifru}" HorizontalAlignment="Left" Height="35" Margin="62,10,0,0" Width="198" />
+            <HyperlinkButton Content="Zaboravili ste šifru?"  HorizontalAlignment="Left" Height="35" Margin="62,10,0,0" Width="198" Click="HyperlinkButton_Click" />
             <Button x:Name="button" Content="Prijavi se" Command="{Binding Login}" HorizontalAlignment="Left" Height="30" Margin="50,10,0,0" Width="198" Background="LightGray" BorderBrush="Black" />
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="29" Margin="30,20,0,0" TextWrapping="Wrap" Text="Nemate korisnički račun?" Width="170"/>
             <HyperlinkButton Content="Registrujte se" Command="{Binding RegistrujSe}" HorizontalAlignment="Left" Height="40" Margin="205,-41,0,0" Width="100"   />

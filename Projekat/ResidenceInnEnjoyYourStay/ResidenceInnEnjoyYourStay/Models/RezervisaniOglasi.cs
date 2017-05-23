@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media.Imaging;
 
-namespace OOAD1.ResidenceInnBaza.Models
+namespace ResidenceInnEnjoyYourStay.Models
 {
     public class RezervisaniOglasi : BazniOglasi
     {
         private DateTime datumPrijave;
         private DateTime datumOdjave;
+        public RezervisaniOglasi(String lokacija, int cijena, String tip, int brojSoba, String pogodnosti, int brojOsoba, BitmapImage naslovna,DateTime prijava,DateTime odjava) : base(lokacija, cijena, tip, brojSoba, pogodnosti, brojOsoba, naslovna)
+        {
+            this.datumPrijave = prijava;
+            this.datumOdjave = odjava;
+        }
 
         public DateTime DatumPrijave
         {

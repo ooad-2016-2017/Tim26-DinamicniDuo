@@ -1,5 +1,5 @@
 ﻿
-using OOAD1.ResidenceInnBaza.Models;
+using ResidenceInnEnjoyYourStay.Models;
 using ResidenceInnEnjoyYourStay.Pomocne;
 using System;
 using System.Collections.Generic;

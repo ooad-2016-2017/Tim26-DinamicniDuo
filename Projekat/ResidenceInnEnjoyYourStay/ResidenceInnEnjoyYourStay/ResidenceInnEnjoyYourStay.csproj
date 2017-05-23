@@ -98,6 +98,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataSource\DataSource.cs" />
     <Compile Include="ForgotPass.xaml.cs">
       <DependentUpon>ForgotPass.xaml</DependentUpon>
     </Compile>

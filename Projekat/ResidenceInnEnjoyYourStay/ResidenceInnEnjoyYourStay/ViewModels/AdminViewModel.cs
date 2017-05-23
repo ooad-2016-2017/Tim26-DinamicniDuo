@@ -1,6 +1,6 @@
 ﻿
-using OOAD1.ResidenceInnBaza.Models;
 using ResidenceInnEnjoyYourStay.Pomocne;
+using ResidenceInnEnyojYourStay.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.UI.Xaml;
 
 namespace ResidenceInnEnjoyYourStay.ViewModels
 {
@@ -59,6 +60,11 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
 
         }
 
+        private void ZaboraviliSifru(object sender, RoutedEventArgs e)
+        {
+            INS.Navigate(typeof(ForgotPass));
+        }
+
         public ICommand RegistrujSe
         {
             get
@@ -72,18 +78,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
             }
 
         }
-        public ICommand ZaboraviliSifru
-        {
-            get
-            {
-                INS.Navigate(typeof(ForgotPass));
-                return zabSifra;
-            }
-            set
-            {
-                zabSifra = value;
-            }
-        }
+       
         public bool potvrdi(Object o)
         {
             if (AdminIme == "admin" && AdminSifra == "dinamicniduo")

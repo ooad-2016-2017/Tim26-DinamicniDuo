@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOAD1.ResidenceInnBaza.Models
+namespace ResidenceInnEnyojYourStay.Models
 {
     public class SponzorisaniOglasi : BazniOglasi
     {

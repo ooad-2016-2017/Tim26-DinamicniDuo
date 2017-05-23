@@ -104,6 +104,7 @@
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegistrovaniKorisnikDBContext.cs" />
     <Compile Include="Pomocne\MainViewModelBase.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\BazniOglasi.cs" />

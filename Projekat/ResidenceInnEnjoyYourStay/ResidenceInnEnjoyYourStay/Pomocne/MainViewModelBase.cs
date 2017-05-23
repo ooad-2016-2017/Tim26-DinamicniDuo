@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOAD1
+namespace ResidenceInnEnyojYourStay
 {
     public abstract class MainViewModelBase : INotifyPropertyChanged // for notifying that particular class has changed
     {

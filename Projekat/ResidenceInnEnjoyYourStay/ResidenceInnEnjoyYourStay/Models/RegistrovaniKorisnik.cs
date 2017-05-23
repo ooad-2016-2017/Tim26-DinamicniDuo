@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOAD1.ResidenceInnBaza.Models
+namespace ResidenceInnEnyojYourStay.Models
 {
+   
     public class RegistrovaniKorisnik : Osoba
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public RegistrovaniKorisnik Id { get; set; }
         private List<Oglasi> mojiOglasi;
         private List<Oglasi> favoriti;
+
 
         public RegistrovaniKorisnik()
         {

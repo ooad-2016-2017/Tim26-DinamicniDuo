@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OOAD1.ResidenceInnBaza.Models
+namespace ResidenceInnEnyojYourStay.Models
 {
-    public abstract class Osoba : MainViewModelBase
+    public abstract class Osoba : Template10.Validation.ValidatableModelBase
     {
         private String ime;
         private String prezime;
@@ -21,15 +21,11 @@ namespace OOAD1.ResidenceInnBaza.Models
         {
             get
             {
-                return ime;
+                return Read<string>();
             }
             set
             {
-                if (value != ime)
-                {
-                    ime = value;
-                    OnPropertyChanged("Ime");
-                }
+                Write(value);
             }
         }
         public String Prezime
@@ -43,7 +39,7 @@ namespace OOAD1.ResidenceInnBaza.Models
                 if (value != prezime)
                 {
                     prezime = value;
-                    OnPropertyChanged("Prezime");
+                   // OnPropertyChanged("Prezime");
                 }
             }
         }
@@ -58,7 +54,7 @@ namespace OOAD1.ResidenceInnBaza.Models
                 if (value != email)
                 {
                     email = value;
-                    OnPropertyChanged("Email");
+                  //  OnPropertyChanged("Email");
                 }
             }
         }
@@ -73,7 +69,7 @@ namespace OOAD1.ResidenceInnBaza.Models
                 if (value != user)
                 {
                     user = value;
-                    OnPropertyChanged("User");
+                 //   OnPropertyChanged("User");
                 }
             }
         }
@@ -88,7 +84,7 @@ namespace OOAD1.ResidenceInnBaza.Models
                 if (value != password)
                 {
                     password = value;
-                    OnPropertyChanged("Pass");
+                 //   OnPropertyChanged("Pass");
                 }
             }
         }
@@ -103,7 +99,7 @@ namespace OOAD1.ResidenceInnBaza.Models
                 if (value != datumRodjenja)
                 {
                     datumRodjenja = value;
-                    OnPropertyChanged("DatumRodjenja");
+                //    OnPropertyChanged("DatumRodjenja");
                 }
             }
         }

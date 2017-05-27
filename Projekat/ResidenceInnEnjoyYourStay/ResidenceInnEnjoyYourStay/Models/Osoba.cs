@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ResidenceInnEnjoyYourStay.Pomocne;
 
-namespace ResidenceInnEnyojYourStay.Models
+namespace ResidenceInnEnjoyYourStay.Models
 {
-    public abstract class Osoba : Template10.Validation.ValidatableModelBase
+    public abstract class Osoba : MainViewModelBase
     {
         private String ime;
         private String prezime;
@@ -21,11 +22,15 @@ namespace ResidenceInnEnyojYourStay.Models
         {
             get
             {
-                return Read<string>();
+                return ime;
             }
             set
             {
-                Write(value);
+                if (value != ime)
+                {
+                    ime = value;
+                    OnPropertyChanged("Ime");
+                }
             }
         }
         public String Prezime
@@ -39,7 +44,7 @@ namespace ResidenceInnEnyojYourStay.Models
                 if (value != prezime)
                 {
                     prezime = value;
-                   // OnPropertyChanged("Prezime");
+                    OnPropertyChanged("Prezime");
                 }
             }
         }
@@ -54,7 +59,7 @@ namespace ResidenceInnEnyojYourStay.Models
                 if (value != email)
                 {
                     email = value;
-                  //  OnPropertyChanged("Email");
+                    OnPropertyChanged("Email");
                 }
             }
         }
@@ -69,7 +74,7 @@ namespace ResidenceInnEnyojYourStay.Models
                 if (value != user)
                 {
                     user = value;
-                 //   OnPropertyChanged("User");
+                    OnPropertyChanged("User");
                 }
             }
         }
@@ -84,7 +89,7 @@ namespace ResidenceInnEnyojYourStay.Models
                 if (value != password)
                 {
                     password = value;
-                 //   OnPropertyChanged("Pass");
+                    OnPropertyChanged("Pass");
                 }
             }
         }
@@ -99,10 +104,11 @@ namespace ResidenceInnEnyojYourStay.Models
                 if (value != datumRodjenja)
                 {
                     datumRodjenja = value;
-                //    OnPropertyChanged("DatumRodjenja");
+                    OnPropertyChanged("DatumRodjenja");
                 }
             }
         }
+        public Osoba() { }
         public Osoba(string im, string prez, DateTime datR, string us, string pass, string em)
         {
             Ime = im;
@@ -111,10 +117,6 @@ namespace ResidenceInnEnyojYourStay.Models
             User = us;
             Pass = pass;
             DatumRodjenja = datR;
-        }
-        public Osoba()
-        {
-
         }
     }
 }

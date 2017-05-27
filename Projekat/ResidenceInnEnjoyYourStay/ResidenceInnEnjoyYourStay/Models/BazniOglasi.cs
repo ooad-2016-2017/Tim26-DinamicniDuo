@@ -1,10 +1,12 @@
-﻿using System;
+﻿using ResidenceInnEnjoyYourStay.Pomocne;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media.Imaging;
 
-namespace ResidenceInnEnyojYourStay.Models
+namespace ResidenceInnEnjoyYourStay.Models
 {
     public abstract class BazniOglasi : MainViewModelBase
     {
@@ -14,10 +16,54 @@ namespace ResidenceInnEnyojYourStay.Models
         private int brojSoba;
         private String dodatnePogodnosti;
         private int brojOsoba;
+        private BitmapImage naslovnaSlika;
+        private List<BitmapImage> slikeOglasa;
 
-        public BazniOglasi()
+        public BazniOglasi(String lokacija, int cijena, String tip, int brojSoba, String pogodnosti, int brojOsoba, BitmapImage naslovna)
         {
+            this.lokacija = lokacija;
+            this.cijena = cijena;
+            this.tipSmjestaja = tip;
+            this.brojSoba = brojSoba;
+            this.dodatnePogodnosti = pogodnosti;
+            this.brojOsoba = brojOsoba;
+            this.naslovnaSlika = naslovna;
+            slikeOglasa = new List<BitmapImage>();
 
+        }
+        public BazniOglasi() { }
+
+
+        public List<BitmapImage> SlikeOglasa
+        {
+            get
+            {
+                return slikeOglasa;
+            }
+            set
+            {
+                if (value != slikeOglasa)
+                {
+                    slikeOglasa = value;
+                    OnPropertyChanged("SlikeOglasa");
+                }
+            }
+        }
+
+        public BitmapImage NaslovnaSlika
+        {
+            get
+            {
+                return naslovnaSlika;
+            }
+            set
+            {
+                if (value != naslovnaSlika)
+                {
+                    naslovnaSlika = value;
+                    OnPropertyChanged("NaslovnaSlika");
+                }
+            }
         }
         public String Lokacija
         {

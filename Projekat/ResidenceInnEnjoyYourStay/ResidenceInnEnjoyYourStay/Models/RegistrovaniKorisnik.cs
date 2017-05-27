@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResidenceInnEnyojYourStay.Models
+namespace ResidenceInnEnjoyYourStay.Models
 {
    
     public class RegistrovaniKorisnik : Osoba
@@ -15,15 +15,12 @@ namespace ResidenceInnEnyojYourStay.Models
         private List<Oglasi> mojiOglasi;
         private List<Oglasi> favoriti;
 
-
-        public RegistrovaniKorisnik()
+        public RegistrovaniKorisnik(string im, string prez, DateTime datR, string us, string pass, string em) : base(im,prez,datR,us,pass,em)
         {
 
         }
-        public RegistrovaniKorisnik(string im, string prez, DateTime datR, string us, string pass, string em) : base()
-        {
+        public RegistrovaniKorisnik():base() { }
 
-        }
         public List<Oglasi> MojiOglasi
         {
             get

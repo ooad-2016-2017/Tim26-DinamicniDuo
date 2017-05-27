@@ -20,7 +20,7 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Orientation="Horizontal">
                             
-                            <Image x:Name="naslovnaSlika"     Source="{Binding slika}" MaxHeight="100" MaxWidth="100" Margin="5,10,0,0" Stretch="UniformToFill"></Image>
+                            <Image x:Name="naslovnaSlika"     Source="{Binding NaslovnaSlika}" MaxHeight="100" MaxWidth="100" Margin="5,10,0,0" Stretch="UniformToFill"></Image>
                             <RichTextBlock x:Name="kraciOpis"  Margin="20,10,10,0" MaxLines="10" MaxWidth="500">
                                 <Paragraph>
                                     <Paragraph.Inlines>

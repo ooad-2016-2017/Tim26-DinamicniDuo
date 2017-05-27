@@ -10,19 +10,20 @@
     <Grid  Background="#FFDEDEDE">
         <Image Source="Assets/night1.jpg" Stretch="Fill"/>
         <StackPanel x:Name ="Registerr" HorizontalAlignment="Left" Height="400" Margin="165,159,0,0" VerticalAlignment="Top" Width="495" Background="WhiteSmoke" BorderBrush="Black" BorderThickness="5" >
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="29" Margin="40,70,0,0" TextWrapping="Wrap" Text="" Width="186" PlaceholderText="Ime"/>
-            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="29" Margin="40,50,0,0" TextWrapping="Wrap" Text="" Width="186" PlaceholderText="e-mail"/>
-            <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="29" Margin="252,-32,0,0" TextWrapping="Wrap" Text="" Width="186" PlaceholderText="username"/>
-            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="29" Margin="252,-200,0,0" TextWrapping="Wrap" Text="" Width="186" PlaceholderText="Prezime"/>
-            <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="29" Margin="40,50,0,0" Width="186" PasswordChar="*" PlaceholderText="password"/>
-            <PasswordBox x:Name="passwordBox1" HorizontalAlignment="Left" Height="29" Margin="252,-35,0,0" Width="186" PasswordChar="*" PlaceholderText="password"/>
+            <TextBox x:Name="textBoxIme" HorizontalAlignment="Left" Height="29" Margin="40,70,0,0" TextWrapping="Wrap" Text="" Width="186" PlaceholderText="Ime"/>
+            <TextBox x:Name="textBoxEmail" HorizontalAlignment="Left" Height="29" Margin="40,50,0,0" TextWrapping="Wrap" Text="" Width="186" PlaceholderText="e-mail"/>
+            <TextBox x:Name="textBoxKorisnik" HorizontalAlignment="Left" Height="29" Margin="252,-32,0,0" TextWrapping="Wrap" Text="" Width="186" PlaceholderText="username"/>
+            <TextBox x:Name="textBoxPrezime" HorizontalAlignment="Left" Height="29" Margin="252,-200,0,0" TextWrapping="Wrap" Text="" Width="186" PlaceholderText="Prezime"/>
+            <PasswordBox x:Name="passwordBoxSifra" HorizontalAlignment="Left" Height="29" Margin="40,50,0,0" Width="186" PasswordChar="*" PlaceholderText="password"/>
+            <PasswordBox x:Name="passwordBoxPotvrdi" HorizontalAlignment="Left" Height="29" Margin="252,-35,0,0" Width="186" PasswordChar="*" PlaceholderText="password"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="Ime" Width="100" Margin="40,-410,0,0"/>
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="29" Margin="252,-410,0,0" TextWrapping="Wrap" Text="Prezime" Width="186"/>
             <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="29" Margin="40,-250,0,0" TextWrapping="Wrap" Text="E-mail adresa" Width="186"/>
             <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="29" Margin="252,-250,0,0" TextWrapping="Wrap" Text="Korisničko ime" Width="186"/>
             <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="29" Margin="40,-90,0,0" TextWrapping="Wrap" Text="Šifra" Width="186"/>
             <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Height="29" Margin="252,-90,0,0" TextWrapping="Wrap" Text="Ponovi šifru" Width="186"/>
-            <Button x:Name="button" Content="Registruj se" HorizontalAlignment="Left" Height="35" Margin="252,30,0,0" Width="186" Background="LightGray" BorderBrush="Black"/>
+            <Button x:Name="buttonRegistrujSe" Content="Registruj se" HorizontalAlignment="Left" Height="35" Margin="252,30,0,0" Width="186" Background="LightGray" BorderBrush="Black"/>
+            <TextBlock x:Name="textBlock12" HorizontalAlignment="Left" Height="29" Margin="80,15,0,0" TextWrapping="Wrap" Text="" Width="299"/>
 
         </StackPanel>
         <SplitView HorizontalAlignment="Right" Height="35" Margin="0,0,0,0" VerticalAlignment="Top" Width="790" Background="WhiteSmoke" BorderBrush="Transparent">
@@ -30,7 +31,7 @@
                 <Grid/>
             </SplitView.Pane>
             <StackPanel HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="248">
-                <Button x:Name="button1" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" HorizontalAlignment="Left" Height="35" Margin="10,0,0,0" Width="45" Background="Transparent" />
+                <Button x:Name="button1" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" Click="Button_Click_1" HorizontalAlignment="Left" Height="35" Margin="10,0,0,0" Width="45" Background="Transparent" />
                 <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="35" Margin="60,-27,0,0" TextWrapping="Wrap" Text="Početna" Width="100"/>
             </StackPanel>
 
@@ -45,7 +46,7 @@
             <SplitView.Pane>
                 <Grid/>
             </SplitView.Pane>
-            <Button x:Name="button2" FontFamily ="Segoe MDL2 Assets" Content="&#xE0C4;" HorizontalAlignment="Left" Height="35" Margin="5,0,0,0" VerticalAlignment="Top" Width="35" Background="Transparent" FontSize="15" />
+            <Button x:Name="button2" FontFamily ="Segoe MDL2 Assets" Content="&#xE0C4;" Click="Button_Click" HorizontalAlignment="Left" Height="35" Margin="5,0,0,0" VerticalAlignment="Top" Width="35" Background="Transparent" FontSize="15" />
         </SplitView>
 
 

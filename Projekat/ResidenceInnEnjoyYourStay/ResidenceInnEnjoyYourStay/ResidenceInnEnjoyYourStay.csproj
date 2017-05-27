@@ -105,6 +105,7 @@
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegistrovaniKorisnikDBContext.cs" />
     <Compile Include="Pomocne\MainViewModelBase.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\BazniOglasi.cs" />
@@ -119,13 +120,13 @@
     <Compile Include="Neka.cs" />
     <Compile Include="Pomocne\NavigationService.cs" />
     <Compile Include="Pomocne\RelayCommand.cs" />
-    <Compile Include="pregledNalogaAdmin.xaml.cs">
+    <Compile Include="Views\pregledNalogaAdmin.xaml.cs">
       <DependentUpon>pregledNalogaAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pregledObjava.xaml.cs">
+    <Compile Include="Views\pregledObjava.xaml.cs">
       <DependentUpon>pregledObjava.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pregledSmjestaja.xaml.cs">
+    <Compile Include="Views\pregledSmjestaja.xaml.cs">
       <DependentUpon>pregledSmjestaja.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,27 +184,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <EmbeddedResource Include="PregledKorNal.xaml">
+    <EmbeddedResource Include="Views\PregledKorNal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="RezervacijaSmjestaja.xaml">
+    <EmbeddedResource Include="Views\RezervacijaSmjestaja.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PregledObjavaAdmin.xaml">
+    <EmbeddedResource Include="Views\PregledObjavaAdmin.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Page Include="pregledNalogaAdmin.xaml">
+    <Page Include="Views\pregledNalogaAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pregledObjava.xaml">
+    <Page Include="Views\pregledObjava.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pregledSmjestaja.xaml">
+    <Page Include="Views\pregledSmjestaja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

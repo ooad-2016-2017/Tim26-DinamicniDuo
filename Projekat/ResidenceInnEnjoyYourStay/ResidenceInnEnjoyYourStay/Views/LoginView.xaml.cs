@@ -1,7 +1,7 @@
 ﻿using ResidenceInnEnjoyYourStay.ViewModels;
 using System;
+
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,23 +23,12 @@ namespace ResidenceInnEnjoyYourStay.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Registracija : Page
+    public sealed partial class LoginView : Page
     {
-        public string text { get; set; }
-        public Registracija()
+        public LoginView()
         {
             this.InitializeComponent();
-            this.DataContext = new RegisterViewModel();
+            this.DataContext = new LoginViewModel();
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            text = e.Parameter as string;
-            if (text != null)
-            {
-                textBlock12.Text = text;
-                //Do your stuff
-            }
-        }
-
     }
 }

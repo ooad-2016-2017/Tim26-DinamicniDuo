@@ -21,14 +21,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
         {
             get; set;
         }
-        ICommand registracija
-        {
-            get; set;
-        }
-        ICommand zabSifra
-        {
-            get; set;
-        }
+       
        
    
         public String AdminIme { get; set; }
@@ -59,26 +52,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
      
 
         }
-
-        private void ZaboraviliSifru(object sender, RoutedEventArgs e)
-        {
-            INS.Navigate(typeof(ForgotPass));
-        }
-
-        public ICommand RegistrujSe
-        {
-            get
-            {
-                INS.Navigate(typeof(Register));
-                return registracija;
-            }
-            set
-            {
-                registracija = value;
-            }
-
-        }
-       
+        
         public bool potvrdi(Object o)
         {
             if (AdminIme == "admin" && AdminSifra == "dinamicniduo")

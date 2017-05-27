@@ -105,6 +105,7 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\RegistrovaniKorisnikDBContext.cs" />
+    <Compile Include="Pomocne\CommandHandler.cs" />
     <Compile Include="Pomocne\MainViewModelBase.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\BazniOglasi.cs" />
@@ -133,11 +134,15 @@
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\ForgotPassViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\PocetnaViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="Views\ForgotPassword.xaml.cs">
       <DependentUpon>ForgotPassword.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LoginViewModel.xaml.cs">
-      <DependentUpon>LoginViewModel.xaml</DependentUpon>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PocetnaStrana.xaml.cs">
       <DependentUpon>PocetnaStrana.xaml</DependentUpon>
@@ -215,7 +220,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\LoginViewModel.xaml">
+    <Page Include="Views\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

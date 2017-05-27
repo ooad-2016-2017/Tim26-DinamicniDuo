@@ -8,7 +8,60 @@
       mc:Ignorable="d" Width="834.197">
 
     <Grid  Background="#FFDEDEDE">
-        <Image Source="Assets/night1.jpg" Stretch="Fill"/>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth = "800"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Registerr.Margin"
+                              Value="165,159,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth = "700"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Registerr.Margin"
+                              Value="100,120,0,0" />
+                        <Setter Target="textBlock5.Margin"
+                                Value="10,55,0,0" />
+                        <Setter Target="textBlock8.Margin"
+                                Value="10,95,0,0" />
+                        <Setter Target="textBlock9.Margin"
+                                Value="110,95,0,0" />
+                        <Setter Target="textBlock10.Margin"
+                                Value="230,95,0,0" />
+                        <Setter Target="textBlock11.Margin"
+                                Value="310,95,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Phone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth = "0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Registerr.Margin"
+                              Value="5,100,0,0" />
+                        <Setter Target="textBlock5.Margin"
+                                Value="10,45,0,0" />
+                        <Setter Target="textBlock8.Margin"
+                                Value="10,75,0,0" />
+                        <Setter Target="textBlock9.Margin"
+                                Value="110,75,0,0" />
+                        <Setter Target="textBlock10.Margin"
+                                Value="230,75,0,0" />
+                        <Setter Target="textBlock11.Margin"
+                                Value="310,75,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Image Source="/Assets/night1.jpg" Stretch="Fill"/>
         <StackPanel x:Name ="Registerr" HorizontalAlignment="Left" Height="400" Margin="165,159,0,0" VerticalAlignment="Top" Width="495" Background="WhiteSmoke" BorderBrush="Black" BorderThickness="5" >
             <TextBox x:Name="textBoxIme" HorizontalAlignment="Left" Height="29" Margin="40,70,0,0" TextWrapping="Wrap" Text="" Width="186" PlaceholderText="Ime"/>
             <TextBox x:Name="textBoxEmail" HorizontalAlignment="Left" Height="29" Margin="40,50,0,0" TextWrapping="Wrap" Text="" Width="186" PlaceholderText="e-mail"/>
@@ -22,7 +75,7 @@
             <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="29" Margin="252,-250,0,0" TextWrapping="Wrap" Text="Korisničko ime" Width="186"/>
             <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="29" Margin="40,-90,0,0" TextWrapping="Wrap" Text="Šifra" Width="186"/>
             <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Height="29" Margin="252,-90,0,0" TextWrapping="Wrap" Text="Ponovi šifru" Width="186"/>
-            <Button x:Name="buttonRegistrujSe" Content="Registruj se" HorizontalAlignment="Left" Height="35" Margin="252,30,0,0" Width="186" Background="LightGray" BorderBrush="Black"/>
+            <Button x:Name="buttonRegistrujSe" Content="Registruj se" HorizontalAlignment="Left" Height="35" Margin="252,30,0,0" Width="186" Background="LightGray" BorderBrush="Black" Command="{Binding RegisterCommand}"/>
             <TextBlock x:Name="textBlock12" HorizontalAlignment="Left" Height="29" Margin="80,15,0,0" TextWrapping="Wrap" Text="" Width="299"/>
 
         </StackPanel>
@@ -31,7 +84,7 @@
                 <Grid/>
             </SplitView.Pane>
             <StackPanel HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="248">
-                <Button x:Name="button1" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" Click="Button_Click_1" HorizontalAlignment="Left" Height="35" Margin="10,0,0,0" Width="45" Background="Transparent" />
+                <Button x:Name="button1" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" Command="{Binding PocetnaCommand}" HorizontalAlignment="Left" Height="35" Margin="10,0,0,0" Width="45" Background="Transparent" />
                 <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="35" Margin="60,-27,0,0" TextWrapping="Wrap" Text="Početna" Width="100"/>
             </StackPanel>
 
@@ -46,7 +99,7 @@
             <SplitView.Pane>
                 <Grid/>
             </SplitView.Pane>
-            <Button x:Name="button2" FontFamily ="Segoe MDL2 Assets" Content="&#xE0C4;" Click="Button_Click" HorizontalAlignment="Left" Height="35" Margin="5,0,0,0" VerticalAlignment="Top" Width="35" Background="Transparent" FontSize="15" />
+            <Button x:Name="button2" FontFamily ="Segoe MDL2 Assets" Content="&#xE0C4;" Command="{Binding BackCommand}" HorizontalAlignment="Left" Height="35" Margin="5,0,0,0" VerticalAlignment="Top" Width="35" Background="Transparent" FontSize="15" />
         </SplitView>
 
 

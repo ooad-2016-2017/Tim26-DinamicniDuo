@@ -28,7 +28,7 @@ namespace ResidenceInnEnjoyYourStay.Views
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(LoginViewModel), null);
+            this.Frame.Navigate(typeof(LoginView), null);
         }
     }
 }

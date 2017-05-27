@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ResidenceInnEnjoyYourStay.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -22,47 +23,24 @@ namespace ResidenceInnEnjoyYourStay.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ForgotPassword : Page, INotifyPropertyChanged
+    public sealed partial class ForgotPassword : Page
     {
-        public String text { get; set; }
+        public string text { get; set; }
         public ForgotPassword()
         {
             this.InitializeComponent();
+            this.DataContext = new ForgotPassViewModel();
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void button2_Click(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.Frame.Navigate(typeof(PocetnaStrana), null);
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(LoginViewModel), null);
-        }
-        private async void btn_resetClick(object sender, RoutedEventArgs e)
-        {
-           
-            var sifra = textBox.Text;
-            bool login = true;
-
-            if (login)
+             text = e.Parameter as string;
+            if (text != null)
             {
-                textBlock3.Visibility = Visibility.Visible;
-                text = "text";
-                if (PropertyChanged != null)
-                {
-                    PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(text)));
-                }
-                
-            }
-            else
-            {
-                var dialog1 = new MessageDialog("Ne postoji korisnik sa datom e-mail adresom!", "Neuspješno");
-                await dialog1.ShowAsync();
+                textBlock4.Text = text;
+                //Do your stuff
             }
         }
-       
+
+
     }
 }

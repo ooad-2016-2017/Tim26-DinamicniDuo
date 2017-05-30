@@ -1,0 +1,17 @@
+1.Factory method
+
+Uloga Factory Method paterna je da omoguci kreiranje objekata na nacin da podklase odluce koju klasu je instancirati. Factory Method 
+instancira odgovarajucu podklasu(izvedenu klasu) preko posebne metode na osnovu informacije od strane klijenta ili na osnovu tekuceg stanja.
+Ovu metodu bismo mogli koristiti kod korisnika sistema. Obzirom da imamo Registrovane korisnike i posjetioce samim tim i rezervacija smještaja
+ce biti izvršena na osnovu toga. Ukoliko je korisnik prijavljen, rezervacija ce se vršiti na osnovu poznatih podataka o korisniku, u suprotnom
+ce posjetioc morati unijeti svoje podatke. 
+
+2.Iterator pattern
+
+Namjerna Iterator patterna je da osigura nacin za sekvencijalni pristup elementima agregatnog objekta bez otkrivanja osnovnog koda. 
+
+3. Command pattern
+
+Command pattern govori o enkapsulaciji svih zahtjeva koji dolaze od programa te ih proslijedi dalje primatelju koji poduzima akcije. Ako 
+postoji mnogo akcija za izvodenje, onda se uspostavlja hijerarhija komandi  koje se polimorfno obraduju. Ovaj patern bismo mogli primijeniti
+kod pregleda objava obzirom da admin ima mogucnost brisanja i uredivanja oglasa. 

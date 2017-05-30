@@ -15,3 +15,30 @@ Namjerna Iterator patterna je da osigura nacin za sekvencijalni pristup elementi
 Command pattern govori o enkapsulaciji svih zahtjeva koji dolaze od programa te ih proslijedi dalje primatelju koji poduzima akcije. Ako 
 postoji mnogo akcija za izvodenje, onda se uspostavlja hijerarhija komandi  koje se polimorfno obraduju. Ovaj patern bismo mogli primijeniti
 kod pregleda objava obzirom da admin ima mogucnost brisanja i uredivanja oglasa. 
+
+4. Facade patern
+
+Facade patern se koristi kada sistem ima vise identificiranih podsistema (subsystems) pri cemu su
+apstrakcije i implementacije podsistema usko povezane. Osnovna namjena Facade paterna je da osigura
+vise pogleda visokog nivoa na podsisteme. Ovaj patern je svojevrsna pvoeznica izmedju korisnickih interfejsa (formi) i 
+logickog pogleda na sistem. Kako logicki pogled na sistem predstavljaju ViewModeli, to bi za implementaciju ovog paterna
+trebalo napraviti klasu Facade, koja bi objedinjavala sve ViewModele i koja bi navigirala njima u zavisnsoti od korisnicke
+interakcije.
+
+5. Singleton patern
+
+U modelu klasa, postoje odredjeni tipovi klasa za koje bi trebalo onemoguciti instanciranje objekata tog tipa vise puta i
+nad kojima je potrebna jedinstvena kontrola pristupa. U nasem slucaju instanciranej objekata tipa AdminViewModel,
+KorisnikViewModel ili OglasiViewModel, dovelo bi do toga da bi postojalo vise nacina za registrovanje korisnika, prijavu,
+brisanje korisnika ili oglasa i slicno, sto je neprihvatljivo. Potrebno je kreirati klasu Singleton koja ce instancirati 
+zeljenu klasu. Ta klasa ce sadrzavati static varijablu instance Singleton klase i private konstruktor, koji omogucuje
+da samo Singleton klasa moze instancirati taj objekat.
+
+6. Proxy patern
+
+Namjena Proxy paterna je da omoguci pristup i kontrolu pristupa stvarnim objektima. Jedna veoma bitna klasa u nasem modelu
+je klasa AdminViewModel koju bi trebalo zastiti od neovlastenog pristupa. To nam omogucava upravo ovaj patern. Klasa 
+AdminViewModel se treba deklarisati kao privatna, te je potrebno napraviti novu klasu Proxy koja ce izvrsiti kreiranje
+instance objekta tipa AdminViewModel, naravno uz prethodnu kontrolu prava pristupa. Kada korisnik unese korisnicke podatke
+pozvat ce se metoda Authenticate unutar Proxy klase, koja ce izvrsiti provjeru informacija i kontrolu pristupa stvarnom 
+objektu.

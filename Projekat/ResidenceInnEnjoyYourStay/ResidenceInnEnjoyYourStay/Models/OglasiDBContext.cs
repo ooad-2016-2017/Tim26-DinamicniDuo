@@ -1,5 +1,4 @@
 ﻿using Microsoft.Data.Entity;
-using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,24 +9,19 @@ using Windows.Storage;
 
 namespace ResidenceInnEnjoyYourStay.Models
 {
-    public class RegistrovaniKorisnikDBContext : DbContext
+    public class OglasiDBContext : DbContext
     {
-        public DbSet<RegistrovaniKorisnik> korisnici { get; set; }
-        
+        public DbSet<Oglasi> korisnici { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string databaseFilePath = "Ooadbaza.db";
+            string databaseFilePath = "Ooadbaza1.db";
             try
             {
                 databaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, databaseFilePath);
             }
             catch (InvalidOperationException) { }
             optionsBuilder.UseSqlite($"Data source = {databaseFilePath}");
-        }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            //jedno od polja je image da se zna šta je zapravo predstavlja byte[]
-            modelBuilder.Entity<RegistrovaniKorisnik>().Property(p => p.ProfilnaSlika).HasColumnType("image");
         }
     }
 }

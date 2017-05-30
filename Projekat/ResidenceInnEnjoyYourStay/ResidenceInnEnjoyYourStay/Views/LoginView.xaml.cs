@@ -30,5 +30,7 @@ namespace ResidenceInnEnjoyYourStay.Views
             this.InitializeComponent();
             this.DataContext = new LoginViewModel();
         }
+       
     }
 }
+

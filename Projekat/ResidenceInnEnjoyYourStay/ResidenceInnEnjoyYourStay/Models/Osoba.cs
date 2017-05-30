@@ -11,6 +11,7 @@ namespace ResidenceInnEnjoyYourStay.Models
 {
     public abstract class Osoba : MainViewModelBase
     {
+
         private String ime;
         private String prezime;
         private String email;

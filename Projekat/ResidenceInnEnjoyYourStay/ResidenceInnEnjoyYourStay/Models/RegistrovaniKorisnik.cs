@@ -4,24 +4,50 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace ResidenceInnEnjoyYourStay.Models
 {
    
     public class RegistrovaniKorisnik : Osoba
     {
+       
+        private int id { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public RegistrovaniKorisnik Id { get; set; }
-        private List<Oglasi> mojiOglasi;
-        private List<Oglasi> favoriti;
-
-        public RegistrovaniKorisnik(string im, string prez, DateTime datR, string us, string pass, string em) : base(im,prez,datR,us,pass,em)
+        public int Id
         {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
+        private BitmapImage profilnaSlika;
 
+        private List<Oglasi> mojiOglasi;
+       private List<Oglasi> favoriti;
+
+        public RegistrovaniKorisnik(string im, string prez, DateTime datR, string us, string pass, string em, BitmapImage slika) : base(im,prez,datR,us,pass,em)
+        {
+            ProfilnaSlika = slika;
         }
         public RegistrovaniKorisnik():base() { }
 
-        public List<Oglasi> MojiOglasi
+        public BitmapImage ProfilnaSlika
+        {
+            get
+            {
+                return profilnaSlika;
+            }
+            set
+            {
+                profilnaSlika = value;
+            }
+        }
+       public List<Oglasi> MojiOglasi
         {
             get
             {

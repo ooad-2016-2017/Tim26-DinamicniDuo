@@ -37,7 +37,7 @@ namespace ResidenceInnEnjoyYourStay.Views
             if (text != null)
             {
                 textBlock4.Text = text;
-                //Do your stuff
+              
             }
         }
 

@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Microsoft.WindowsAzure.MobileServices;
+using Windows.UI.Popups;
+using ResidenceInnEnjoyYourStay.Azure;
+using Windows.UI.Xaml.Input;
 
 namespace ResidenceInnEnjoyYourStay.ViewModels
 {
@@ -104,7 +108,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
         private ICommand register;
         private ICommand back;
         private ICommand pocetna;
-       
+
 
         public ICommand BackCommand
         {
@@ -137,10 +141,33 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
                 return register ?? (register = new CommandHandler(() => Register(), true));
             }
         }
+        IMobileServiceTable<RegistrovaniKorisnik> userTableObj = App.MobileService.GetTable<RegistrovaniKorisnik>();
+        private void btnSpasi_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            try
+            {
+                RegistrovaniKorisnik obj = new RegistrovaniKorisnik();
+                obj.ime = Name;
+                obj.prezime = Surname;
+                obj.email = Email;
+                obj.password = Password;
+                obj.username = Username;
+                userTableObj.InsertAsync(obj);
+                MessageDialog msgDialog = new MessageDialog("Uspješno ste registrovani.");
+
+                msgDialog.ShowAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageDialog msgDialogError = new MessageDialog("Error : " +
+               ex.ToString());
+                msgDialogError.ShowAsync();
+            }
+        }
         public void Register()
         {
-            
-            if(!ImePrezime.IsMatch(Name))
+
+            if (!ImePrezime.IsMatch(Name))
                 ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Unesite ispravno ime");
             else if (!ImePrezime.IsMatch(Surname))
                 ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Unesite ispravno prezime");
@@ -150,13 +177,14 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
                 ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Niste unijeli ispravan format sifre");
             else if (!mail.IsMatch(Email))
                 ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Niste unijeli ispravan e-mail");
-            else if(Password != Password2)
+            else if (Password != Password2)
                 ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Šifre se ne podudaraju");
             else if (ImePrezime.IsMatch(Name) && ImePrezime.IsMatch(Surname) && username.IsMatch(Username) && password.IsMatch(Password) && mail.IsMatch(Email))
                 ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Uspješno ste registrovani");
 
 
         }
+        
     }
-
 }
+ 

@@ -8,14 +8,82 @@
      xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
     mc:Ignorable="d" Width="834.197">
     <Grid>
-        <Image Source="Assets/night1.jpg" Stretch="Fill" />
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="297" Margin="300,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="426"/>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                        </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Prozor.Margin"
+                                Value="300,65,0,0"/>
+                        <Setter Target="textBlock.Margin"
+                                Value="340,98,0,0"/>
+                        <Setter Target="image.Margin"
+                                Value="591,65,0,0"/>
+                        <Setter Target="textBox.Margin"
+                                Value="340,131,0,0"/>
+                        <Setter Target="textBlock1.Margin"
+                                Value="340,204,0,0"/>
+                        <Setter Target="textBox1.Margin"
+                                Value="340,235,0,0"/>
+                        <Setter Target="button.Margin"
+                                Value="582,274,0,0"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="700"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Prozor.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock.Width"
+                                Value="100"/>
+                        <Setter Target="image.Width"
+                                Value="100"/>
+                        <Setter Target="textBox.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock1.Width"
+                                Value="100"/>
+                        <Setter Target="textBox1.Width"
+                                Value="100"/>
+                        <Setter Target="button.Width"
+                                Value="100"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Phone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Prozor.Width"
+                                Value="430"/>
+                        <Setter Target="textBlock.Width"
+                                Value="100"/>
+                        <Setter Target="image.Width"
+                                Value="100"/>
+                        <Setter Target="textBox.Width"
+                                Value="195"/>
+                        <Setter Target="textBlock1.Width"
+                                Value="100"/>
+                        <Setter Target="textBox1.Width"
+                                Value="195"/>
+                        <Setter Target="button.Width"
+                                Value="100"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
+        <Image Source="/Assets/night1.jpg" Stretch="Fill" />
+        <Rectangle x:Name="Prozor" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="297" Margin="300,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="426"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="28" Margin="340,98,0,0" TextWrapping="Wrap" Text="Paypal account" VerticalAlignment="Top" Width="134"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="61" Margin="591,65,0,0" VerticalAlignment="Top" Width="99" Source="Assets/PayPal.png"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="61" Margin="591,65,0,0" VerticalAlignment="Top" Width="99" Source="/Assets/PayPal.png"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="340,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="33" Width="200"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="340,204,0,0" TextWrapping="Wrap" Text="Šifra" VerticalAlignment="Top" Height="31" Width="134"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="340,235,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Height="48" Margin="582,274,0,0" VerticalAlignment="Top" Width="108"/>
+        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Height="48" Margin="582,274,0,0" VerticalAlignment="Top" Width="108" Command="{Binding PregledKorNalCommand}"/>
     </Grid>
 
 </Page>

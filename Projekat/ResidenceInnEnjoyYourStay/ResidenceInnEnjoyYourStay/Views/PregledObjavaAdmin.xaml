@@ -9,10 +9,153 @@
     mc:Ignorable="d" Width="834.197">
 
     <Grid  >
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Prozor.Width"
+                                Value="815"/>
+                        <Setter Target="button.Width"
+                                Value="110"/>
+                        <Setter Target="textBlock.Margin" 
+                                Value="573,57,0,0"/>
+                        <Setter Target="textBlock1.Margin"
+                                Value="76,57,0,0"/>
+                        <Setter Target="image.Margin"
+                                Value="76,108,0,0"/>
+                        <Setter Target="textBlock2.Margin"
+                                Value="197,108,0,0"/>
+                        <Setter Target="textBlock3.Margin"
+                                Value="197,133,0,0"/>
+                        <Setter Target="textBlock4.Margin"
+                                Value="197,158,0,0"/>
+                        <Setter Target="button1.Margin"
+                                Value="374,152,0,0"/>
+                        <Setter Target="image_Copy.Margin"
+                                Value="76,253,0,0"/>
+                        <Setter Target="textBlock2_Copy.Margin"
+                                Value="197,253,0,0"/>
+                        <Setter Target="textBlock3_Copy.Margin"
+                                Value="197,278,0,0"/>
+                        <Setter Target="textBlock4_Copy.Margin"
+                                Value="197,303,0,0"/>
+                        <Setter Target="button1_Copy.Margin"
+                                Value="374,297,0,0"/>
+                        <Setter Target="image_Copy1.Margin"
+                                Value="76,411,0,0"/>
+                        <Setter Target="textBlock2_Copy1.Margin"
+                                Value="197,411,0,0"/>
+                        <Setter Target="textBlock3_Copy1.Margin"
+                                Value="197,436,0,0"/>
+                        <Setter Target="textBlock4_Copy1.Margin"
+                                Value="197,461,0,0"/>
+                        <Setter Target="button1_Copy1.Margin"
+                                Value="374,455,0,0"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="700"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Prozor.Width"
+                              Value="100"/>
+                        <Setter Target="button.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock1.Width"
+                                Value="100"/>
+                        <Setter Target="image.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock2.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock3.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock4.Width"
+                                Value="100"/>
+                        <Setter Target="button1.Width"
+                                Value="100"/>
+                        <Setter Target="image_Copy.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock2_Copy.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock3_Copy.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock4_Copy.Width"
+                                Value="100"/>
+                        <Setter Target="button1_Copy.Width"
+                                Value="100"/>
+                        <Setter Target="image_Copy1.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock2_Copy1.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock3_Copy1.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock4_Copy1.Width"
+                                Value="100"/>
+                        <Setter Target="button1_Copy1.Width"
+                                Value="100"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Phone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Prozor.Width"
+                                Value="815"/>
+                        <Setter Target="button.Width"
+                                Value="111"/>
+                        <Setter Target="textBlock.Width"
+                                Value="140"/>
+                        <Setter Target="textBlock1.Width"
+                                Value="100"/>
+                        <Setter Target="image.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock2.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock3.Width"
+                                Value="60"/>
+                        <Setter Target="textBlock4.Width"
+                                Value="100"/>
+                        <Setter Target="button1.Width"
+                                Value="120"/>
+                        <Setter Target="image_Copy.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock2_Copy.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock3_Copy.Width"
+                                Value="60"/>
+                        <Setter Target="textBlock4_Copy.Width"
+                                Value="100"/>
+                        <Setter Target="button1_Copy.Width"
+                                Value="120"/>
+                        <Setter Target="image_Copy1.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock2_Copy1.Width"
+                                Value="100"/>
+                        <Setter Target="textBlock3_Copy1.Width"
+                                Value="60"/>
+                        <Setter Target="textBlock4_Copy1.Width"
+                                Value="100"/>
+                        <Setter Target="button1_Copy1.Width"
+                                Value="120"/>
 
-        <Image Source="Assets/night1.jpg" Stretch="Fill" />
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="573" Margin="10,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="814"/>
-        <Button x:Name="button" Content="Logout" HorizontalAlignment="Left" Height="46" Margin="712,57,0,0" VerticalAlignment="Top" Width="112"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+           
+                
+                           
+            
+        </VisualStateManager.VisualStateGroups>
+        <Image Source="/Assets/night1.jpg" Stretch="Fill" />
+        <Rectangle x:Name="Prozor"   Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="573" Margin="10,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="814"/>
+        <Button x:Name="button" Content="Logout" HorizontalAlignment="Left" Height="46" Margin="712,57,0,0" VerticalAlignment="Top" Width="112" Command="{Binding LoginViewCommand}"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="46" Margin="573,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139">
             <Run Text="             "/>
             <LineBreak/>
@@ -25,20 +168,20 @@
             <Run/>
             <Run Text="Pregled objava"/>
         </TextBlock>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="76,108,0,0" VerticalAlignment="Top" Width="100" Source="Assets/soba2.jpg"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="76,108,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/soba2.jpg"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="197,108,0,0" TextWrapping="Wrap" Text="Naziv objave" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="197,133,0,0" TextWrapping="Wrap" Text="Korisnik" VerticalAlignment="Top" RenderTransformOrigin="-2.565,-2.267"/>
         <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="197,158,0,0" TextWrapping="Wrap" Text="Datum objave" VerticalAlignment="Top"/>
-        <Button x:Name="button1" Content="Obriši oglas" HorizontalAlignment="Left" Height="30" Margin="374,152,0,0" VerticalAlignment="Top" Width="128"/>
-        <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="100" Margin="76,253,0,0" VerticalAlignment="Top" Width="100" Source="Assets/soba2.jpg"/>
+        <Button x:Name="button1" Content="Obriši oglas" HorizontalAlignment="Left" Height="38" Margin="374,152,0,0" VerticalAlignment="Top" Width="128" Command="{Binding PregledObjavaAdminCommand}"/>
+        <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="100" Margin="76,253,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/soba2.jpg"/>
         <TextBlock x:Name="textBlock2_Copy" HorizontalAlignment="Left" Margin="197,253,0,0" TextWrapping="Wrap" Text="Naziv objave" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock3_Copy" HorizontalAlignment="Left" Margin="197,278,0,0" TextWrapping="Wrap" Text="Korisnik" VerticalAlignment="Top" RenderTransformOrigin="-2.565,-2.267"/>
         <TextBlock x:Name="textBlock4_Copy" HorizontalAlignment="Left" Margin="197,303,0,0" TextWrapping="Wrap" Text="Datum objave" VerticalAlignment="Top"/>
-        <Button x:Name="button1_Copy" Content="Obriši oglas" HorizontalAlignment="Left" Height="30" Margin="374,297,0,0" VerticalAlignment="Top" Width="128"/>
-        <Image x:Name="image_Copy1" HorizontalAlignment="Left" Height="100" Margin="76,411,0,0" VerticalAlignment="Top" Width="100" Source="Assets/soba2.jpg"/>
+        <Button x:Name="button1_Copy" Content="Obriši oglas" HorizontalAlignment="Left" Height="30" Margin="374,297,0,0" VerticalAlignment="Top" Width="128" Command="{Binding PregledObjavaAdminCommand}"/>
+        <Image x:Name="image_Copy1" HorizontalAlignment="Left" Height="100" Margin="76,411,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/soba2.jpg"/>
         <TextBlock x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="197,411,0,0" TextWrapping="Wrap" Text="Naziv objave" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock3_Copy1" HorizontalAlignment="Left" Margin="197,436,0,0" TextWrapping="Wrap" Text="Korisnik" VerticalAlignment="Top" RenderTransformOrigin="-2.565,-2.267"/>
         <TextBlock x:Name="textBlock4_Copy1" HorizontalAlignment="Left" Margin="197,461,0,0" TextWrapping="Wrap" Text="Datum objave" VerticalAlignment="Top"/>
-        <Button x:Name="button1_Copy1" Content="Obriši oglas" HorizontalAlignment="Left" Height="30" Margin="374,455,0,0" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="button1_Copy1" Content="Obriši oglas" HorizontalAlignment="Left" Height="30" Margin="374,455,0,0" VerticalAlignment="Top" Width="128" Command="{Binding PregledObjavaAdminCommand}"/>
     </Grid>
 </Page>

@@ -76,7 +76,7 @@
             <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="29" Margin="252,-250,0,0" TextWrapping="Wrap" Text="Korisničko ime" Width="186"/>
             <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="29" Margin="40,-90,0,0" TextWrapping="Wrap" Text="Šifra" Width="186"/>
             <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Height="29" Margin="252,-90,0,0" TextWrapping="Wrap" Text="Ponovi šifru" Width="186"/>
-            <Button x:Name="buttonRegistrujSe" Content="Registruj se" HorizontalAlignment="Left" Height="35" Margin="252,30,0,0" Width="186" Background="LightGray" BorderBrush="Black" Click = "buttonRegistrujSe_Click"  />
+            <Button x:Name="buttonRegistrujSe" Content="Registruj se" HorizontalAlignment="Left" Height="35" Margin="252,30,0,0" Width="186" Background="LightGray" BorderBrush="Black" Command ="{Binding RegisterCommand}"  />
             <TextBlock x:Name="textBlock12" HorizontalAlignment="Left" Height="29" Margin="80,15,0,0" TextWrapping="Wrap" Text="" Width="299"/>
 
         </StackPanel>

@@ -53,7 +53,12 @@
         <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Height="28" Margin="252,235,0,0" TextWrapping="Wrap" Text="Traži" VerticalAlignment="Top" Width="40" FontWeight="Black" FontStyle="Italic"/>
         <TextBlock x:Name="korisnik" Foreground="Black" HorizontalAlignment="Left" Height="22" Margin="600,8,0,0" TextWrapping="Wrap" Text ="{Binding parameters, Mode = TwoWay}"  VerticalAlignment="Top" Width="98"/>
         <ListView x:Name="listView" HorizontalAlignment="Left" Height="470" VerticalAlignment="Top" Width="228" Margin="541,100,0,0">
-
+            <ItemsControl x:Name="Lista">
+                <Image x:Name="Slika" Width="170" Height="140" />
+            <TextBlock x:Name="Adresa" Width="150" Height="35" />
+            <TextBlock x:Name="Cijena" Width="150" Height="35" />
+                <Hyperlink x:Name="PrikaziVise"/>
+                </ItemsControl>
         </ListView>
 
     </Grid>

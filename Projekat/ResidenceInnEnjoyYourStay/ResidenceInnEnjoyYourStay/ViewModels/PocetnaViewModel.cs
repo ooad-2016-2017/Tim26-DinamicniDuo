@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using System.Data;
 
 namespace ResidenceInnEnjoyYourStay.ViewModels
 {
@@ -26,6 +27,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
         {
             ((Frame)Window.Current.Content).Navigate(typeof(LoginView), null);
         }
+        
         
 
     }

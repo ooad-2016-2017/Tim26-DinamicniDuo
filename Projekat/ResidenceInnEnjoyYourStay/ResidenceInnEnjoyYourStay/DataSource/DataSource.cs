@@ -10,8 +10,8 @@ namespace ResidenceInnEnjoyYourStay.DataSrource
     public class DataSourceResidenceInnEnjoyYourStay
     {
         #region registrovaniKorisnici
-        private static List<RegistrovaniKorisnik> korisnici = new List<RegistrovaniKorisnik>() {
-            new RegistrovaniKorisnik()
+        private static List<RegistrovaniKorisnikModel> korisnici = new List<RegistrovaniKorisnikModel>() {
+            new RegistrovaniKorisnikModel()
             {
                 Ime="Nedim",
                 Prezime="Djonlagic",
@@ -21,7 +21,7 @@ namespace ResidenceInnEnjoyYourStay.DataSrource
                 DatumRodjenja=new DateTime(1995,6,10),
 
             },
-            new RegistrovaniKorisnik()
+            new RegistrovaniKorisnikModel()
             {
                 Ime="Adina",
                 Prezime="Omerovic",
@@ -31,13 +31,13 @@ namespace ResidenceInnEnjoyYourStay.DataSrource
                 DatumRodjenja=new DateTime(1996,2,16)
             }
         };
-        public static IList<RegistrovaniKorisnik> DajSveKorisnike()
+        public static IList<RegistrovaniKorisnikModel> DajSveKorisnike()
         {
             return korisnici;
         }
-        public static RegistrovaniKorisnik ProvjeraKorisnika(String user, String sifra)
+        public static RegistrovaniKorisnikModel ProvjeraKorisnika(String user, String sifra)
         {
-            RegistrovaniKorisnik trazeni = new RegistrovaniKorisnik();
+            RegistrovaniKorisnikModel trazeni = new RegistrovaniKorisnikModel();
             foreach(var i in DajSveKorisnike())
             {
                 if (i.User == user && i.Pass == sifra)

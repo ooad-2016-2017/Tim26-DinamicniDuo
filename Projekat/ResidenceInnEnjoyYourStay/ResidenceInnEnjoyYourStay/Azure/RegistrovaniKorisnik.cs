@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ResidenceInnEnjoyYourStay.Azure
 {
-    class RegistrovaniKorisnik
+    public class RegistrovaniKorisnik
     {
         public string id
         {

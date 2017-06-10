@@ -1,18 +1,36 @@
-﻿using System;
+﻿using ResidenceInnEnjoyYourStay.Pomocne;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using ResidenceInnEnjoyYourStay.Pomocne;
+using Windows.UI.Xaml.Media.Imaging;
+
 
 namespace ResidenceInnEnjoyYourStay.Models
 {
-    public abstract class Osoba : MainViewModelBase
+   
+    public class RegistrovaniKorisnikModel : MainViewModelBase
     {
+       
+        private int id { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
 
-        /*private String ime;
+        private String ime;
         private String prezime;
         private String email;
         private String user;
@@ -109,15 +127,61 @@ namespace ResidenceInnEnjoyYourStay.Models
                 }
             }
         }
-        public Osoba() { }
-        public Osoba(string im, string prez, DateTime datR, string us, string pass, string em)
+        private BitmapImage profilnaSlika;
+
+        private List<Oglasi> mojiOglasi;
+       private List<Oglasi> favoriti;
+
+        public RegistrovaniKorisnikModel(string im, string prez, DateTime datR, string us, string pass, string em, BitmapImage slika)
         {
             Ime = im;
             Prezime = prez;
-            Email = em;
+            DatumRodjenja = datR;
             User = us;
             Pass = pass;
-            DatumRodjenja = datR;
-        }*/
+            Email = em;
+            ProfilnaSlika = slika;
+        }
+        public RegistrovaniKorisnikModel() { }
+
+        public BitmapImage ProfilnaSlika
+        {
+            get
+            {
+                return profilnaSlika;
+            }
+            set
+            {
+                profilnaSlika = value;
+            }
+        }
+       public List<Oglasi> MojiOglasi
+        {
+            get
+            {
+                return mojiOglasi;
+            }
+            set
+            {
+                if (value != mojiOglasi)
+                {
+                    mojiOglasi = value;
+                }
+            }
+        }
+        public List<Oglasi> Favoriti
+        {
+            get
+            {
+                return favoriti;
+            }
+            set
+            {
+                if (value != favoriti)
+                {
+                    favoriti = value;
+                }
+            }
+        }
     }
 }

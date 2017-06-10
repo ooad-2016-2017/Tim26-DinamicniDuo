@@ -16,6 +16,7 @@ using ResidenceInnEnjoyYourStay.DataSrource;
 using Windows.UI.Xaml.Controls.Maps;
 using ResidenceInnEnjoyYourStay.ViewModels;
 using Windows.Devices.Geolocation;
+using Windows.Services.Maps;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -44,9 +45,24 @@ namespace ResidenceInnEnjoyYourStay.Views
             korisnik.Text = parameters;
             
         }
-       
+        
         public void Inicijalizuj()
         {
+            double lat = 0;
+            double lonng = 0;
+            Random random = new Random();
+            double randomNumber;
+           
+            for (int i = 0; i < 50; i++)
+            {
+                randomNumber = random.NextDouble() * (-0.01);
+                lat = 43.860259 + randomNumber;
+                randomNumber = random.NextDouble() * 0.1;
+                lonng = 18.437282 - randomNumber;
+                Geopoint point1= new Geopoint(new BasicGeoposition() { Latitude = lat, Longitude = lonng });
+                MapIcon myPoint1 = new MapIcon { Location = point1, NormalizedAnchorPoint = new Point(0.5, 1.0), Title = "Position " + i, ZIndex = 0 };
+                mapa.MapElements.Add(myPoint1);
+            }
             Geopoint point = new Geopoint(new BasicGeoposition() { Latitude = 43.848098, Longitude = 18.375717 });
             MapIcon myPoint = new MapIcon { Location = point, NormalizedAnchorPoint = new Point(0.5, 1.0), Title = "My position", ZIndex = 0 };
             mapa.MapElements.Add(myPoint);

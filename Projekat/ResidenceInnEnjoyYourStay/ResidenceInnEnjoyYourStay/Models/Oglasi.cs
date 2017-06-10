@@ -13,7 +13,7 @@ namespace ResidenceInnEnjoyYourStay.Models
     {
       
        private int id { get; set; }
-        //  [Key]
+          [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id
        {

@@ -106,7 +106,6 @@
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\OglasiDBContext.cs" />
     <Compile Include="Models\RegistrovaniKorisnikDBContext.cs" />
     <Compile Include="Pomocne\CommandHandler.cs" />
     <Compile Include="Pomocne\MainViewModelBase.cs" />
@@ -114,7 +113,7 @@
     <Compile Include="Models\BazniOglasi.cs" />
     <Compile Include="Models\Oglasi.cs" />
     <Compile Include="Models\Osoba.cs" />
-    <Compile Include="Models\RegistrovaniKorisnik.cs" />
+    <Compile Include="Models\RegistrovaniKorisnikModel.cs" />
     <Compile Include="Models\RezervisaniOglasi.cs" />
     <Compile Include="Models\SponzorisaniOglasi.cs" />
     <Compile Include="MojaKontrola.xaml.cs">
@@ -124,6 +123,9 @@
     <Compile Include="Pomocne\NavigationService.cs" />
     <Compile Include="Pomocne\RelayCommand.cs" />
     <Compile Include="ViewModels\GpsViewModel.cs" />
+    <Compile Include="Views\AdminPanel.xaml.cs">
+      <DependentUpon>AdminPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\pregledNalogaAdmin.xaml.cs">
       <DependentUpon>pregledNalogaAdmin.xaml</DependentUpon>
     </Compile>
@@ -204,6 +206,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Page Include="Views\AdminPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\pregledNalogaAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -237,7 +243,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
+      <Name>Behaviors SDK %28XAML%29</Name>
+    </SDKReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

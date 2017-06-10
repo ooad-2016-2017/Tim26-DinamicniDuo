@@ -142,7 +142,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
             }
         }
         IMobileServiceTable<RegistrovaniKorisnik> userTableObj = App.MobileService.GetTable<RegistrovaniKorisnik>();
-        private void btnSpasi_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Register()
         {
             try
             {
@@ -152,6 +152,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
                 obj.email = Email;
                 obj.password = Password;
                 obj.username = Username;
+                obj.datumRodjenja = new DateTime(1995,1,1);
                 userTableObj.InsertAsync(obj);
                 MessageDialog msgDialog = new MessageDialog("Uspješno ste registrovani.");
 
@@ -164,7 +165,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
                 msgDialogError.ShowAsync();
             }
         }
-        public void Register()
+        public void Register2()
         {
 
             if (!ImePrezime.IsMatch(Name))

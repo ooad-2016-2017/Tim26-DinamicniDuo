@@ -12,7 +12,7 @@ namespace ResidenceInnEnjoyYourStay.Models
 {
     public class RegistrovaniKorisnikDBContext : DbContext
     {
-        public DbSet<RegistrovaniKorisnik> korisnici { get; set; }
+        public DbSet<RegistrovaniKorisnikModel> korisnici { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,7 +27,7 @@ namespace ResidenceInnEnjoyYourStay.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //jedno od polja je image da se zna šta je zapravo predstavlja byte[]
-            modelBuilder.Entity<RegistrovaniKorisnik>().Property(p => p.ProfilnaSlika).HasColumnType("image");
+            modelBuilder.Entity<RegistrovaniKorisnikModel>().Property(p => p.ProfilnaSlika).HasColumnType("image");
         }
     }
 }

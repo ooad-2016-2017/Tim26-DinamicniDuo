@@ -8,7 +8,7 @@ namespace ResidenceInnEnjoyYourStay.Models
 {
     public class Admin : Osoba
     {
-        public Admin(string im, string prez, DateTime datR, string us, string pass, string em) : base(im, prez, datR, us, pass, em) { }
-        public Admin() : base() { }
+      /*  public Admin(string im, string prez, DateTime datR, string us, string pass, string em) : base(im, prez, datR, us, pass, em) { }
+        public Admin() : base() { }*/
     }
 }

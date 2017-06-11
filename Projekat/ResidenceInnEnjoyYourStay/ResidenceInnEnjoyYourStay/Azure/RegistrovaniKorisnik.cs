@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using ResidenceInnEnjoyYourStay.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,6 +44,14 @@ namespace ResidenceInnEnjoyYourStay.Azure
         {
             get;
             set;
+        }
+        IMobileServiceTable<RegistrovaniKorisnik> userTableObj = App.MobileService.GetTable<RegistrovaniKorisnik>();
+        public bool Pretrazi()
+        {
+            RegistrovaniKorisnikModel rk = new RegistrovaniKorisnikModel(ime, prezime, datumRodjenja, username, password, email);
+           
+
+            return false;
         }
     }
 }

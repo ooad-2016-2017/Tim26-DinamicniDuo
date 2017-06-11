@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-//using System.Data.SqlClient;
+
 
 namespace ResidenceInnEnjoyYourStay.ViewModels
 {
@@ -45,7 +45,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
                 OnPropertyChanged("Password");
             }
         }
-
+        
         private ICommand login;
         private ICommand register;
         private ICommand forgot;
@@ -107,21 +107,17 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
                 return login ?? (login = new CommandHandler(() => Login(), true));
             }
         }
-     /*   public void Konekcija()
-        {
-            SqlConnection conn = new SqlConnection("Server=13.85.86.7;Network Library=DBMSSOCN; Database=master;user id=residenceinnadmin;password=dinamicniduo+");
-            SqlCommand cmd = new SqlCommand("SELECT * FROM RegistrovaniKorisnik WHERE user='" + UserName + "' AND password='" + Password + "'");
-            conn.Open();
-            SqlDataReader re = cmd.ExecuteReader();
-
-        }*/
+        
+       
         public void Login()
         {
-            if (!String.IsNullOrEmpty(UserName) && !String.IsNullOrEmpty(Password))
+           
+                if (!String.IsNullOrEmpty(UserName) && !String.IsNullOrEmpty(Password))
                 isAuthenticated = true;
             if(UserName == "admin" && Password == "dinamicniduo")
-            ((Frame)Window.Current.Content).Navigate(typeof(AdminPanel), "admin");
-          
+                ((Frame)Window.Current.Content).Navigate(typeof(AdminPanel), "admin");
+            
+
         }
 
         #region INotifyPropertyChanged Methods

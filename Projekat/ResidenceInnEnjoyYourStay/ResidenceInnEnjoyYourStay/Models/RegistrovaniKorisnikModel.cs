@@ -142,6 +142,16 @@ namespace ResidenceInnEnjoyYourStay.Models
             Email = em;
             ProfilnaSlika = slika;
         }
+        public RegistrovaniKorisnikModel(string im, string prez, DateTime datR, string us, string pass, string em)
+        {
+            Ime = im;
+            Prezime = prez;
+            DatumRodjenja = datR;
+            User = us;
+            Pass = pass;
+            Email = em;
+           
+        }
         public RegistrovaniKorisnikModel() { }
 
         public BitmapImage ProfilnaSlika

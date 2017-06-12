@@ -18,10 +18,11 @@
                     <VisualState.Setters>
                         <Setter Target="korisnikAdmin.Width"
                                 Value="500"/>
-                        <Setter Target="textBlock.Width"
+                        <Setter Target="welcome.Width"
                                 Value="500"/>
-                       
-                        <Setter Target="button.Width"
+                        <Setter Target="pregledK.Width"
+                                Value="500"/>
+                        <Setter Target="pregledO.Width"
                                 Value="500"/>
                     </VisualState.Setters>
                 </VisualState>
@@ -32,10 +33,11 @@
                     <VisualState.Setters>
                         <Setter Target="korisnikAdmin.Width"
                                 Value="388"/>
-                        <Setter Target="textBlock.Width"
+                        <Setter Target="welcome.Width"
                                 Value="467"/>
-                        
-                        <Setter Target="button.Width"
+                        <Setter Target="pregledK.Width"
+                                Value="388"/>
+                        <Setter Target="pregledO.Width"
                                 Value="388"/>
                     </VisualState.Setters>
                 </VisualState>
@@ -46,9 +48,11 @@
                     <VisualState.Setters>
                         <Setter Target="korisnikAdmin.Width"
                                 Value="200"/>
-                        <Setter Target="textBox.Width"
+                        <Setter Target="welcome.Width"
                                 Value="200"/>
-                        <Setter Target="button.Width"
+                        <Setter Target="pregledK.Width"
+                                Value="200"/>
+                        <Setter Target="pregledO.Width"
                                 Value="200"/>
                     </VisualState.Setters>
                 </VisualState>
@@ -57,25 +61,33 @@
 
         <Image Source="/Assets/night1.jpg" Stretch="Fill" />
 
-        <SplitView HorizontalAlignment="Right" Height="35" Margin="0,0,0,0" VerticalAlignment="Top" Width="790" Background="WhiteSmoke" BorderBrush="Transparent">
+        <SplitView HorizontalAlignment="Left" Height="35" Margin="35,0,0,0" VerticalAlignment="Top" Width="900" Background="WhiteSmoke" BorderBrush="Transparent">
             <SplitView.Pane>
                 <Grid/>
             </SplitView.Pane>
+            <StackPanel HorizontalAlignment="Left" Margin="0,0,0,0" Height="35" VerticalAlignment="Top" Width="248">
+                <Button x:Name="button1" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" Command="{Binding PocetnaCommand, Mode=TwoWay}" HorizontalAlignment="Right" Height="29" Margin="0,0,193,0" Width="45" Background="Transparent"/>
+                <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="24" Margin="60,-25,0,0" TextWrapping="Wrap" Text="Početna" Width="100"/>
+            </StackPanel>
 
 
         </SplitView>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="35" Margin="40,90,0,0" TextWrapping="Wrap" Text="Welcome to admin panel" VerticalAlignment="Top" Width="350" FontSize="25" FontWeight="Black"/>
+
         <SplitView HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="44" Background="WhiteSmoke" BorderBrush="Transparent">
             <SplitView.Pane>
                 <Grid/>
             </SplitView.Pane>
-
+            <Button x:Name="button2" FontFamily ="Segoe MDL2 Assets" Content="&#xE0C4;" Command="{Binding BackCommand, Mode=TwoWay}" HorizontalAlignment="Left" Height="35" Margin="5,0,0,0" VerticalAlignment="Top" Width="35" Background="Transparent" FontSize="15"/>
         </SplitView>
-        <Button x:Name="button3"  HorizontalAlignment="Left" Height="35" Margin="730,0,0,0" VerticalAlignment="Top" Width="72" Background="Transparent" Content="Odjava"/>
-        <Button x:Name="button" Content="Pregled objava" HorizontalAlignment="Left" Margin="44,250,0,0" VerticalAlignment="Top" Height="35" Background="WhiteSmoke"/>
-        <Button x:Name="button1" Content="Pregled korisnika" HorizontalAlignment="Left" Margin="44,200,0,0" VerticalAlignment="Top" Height="35" Width="388" Background="WhiteSmoke"/>
-        <TextBlock x:Name="korisnikAdmin" HorizontalAlignment="Left" Margin="688,10,0,0" TextWrapping="Wrap" Text="admin" VerticalAlignment="Top" FontFamily="Vedrana"/>
 
+
+
+        <TextBlock x:Name="welcome" HorizontalAlignment="Left" Height="35" Margin="40,90,0,0" TextWrapping="Wrap" Text="Welcome to admin panel" VerticalAlignment="Top" Width="350" FontSize="25" FontWeight="Black"/>
+
+        <Button x:Name="Odjava"  HorizontalAlignment="Left" Height="35" Margin="800,0,0,0" VerticalAlignment="Top" Width="65" Background="Transparent" Content="Logout" Command="{Binding LogoutCommand, Mode=TwoWay}" FontFamily="Lato"/>
+        <Button x:Name="pregledO" Content="Pregled objava" Command="{Binding PregledObjava, Mode=TwoWay}" HorizontalAlignment="Left" Margin="44,250,0,0" VerticalAlignment="Top" Height="35" Width="388" Background="WhiteSmoke"/>
+        <Button x:Name="pregledK" Content="Pregled korisnika" HorizontalAlignment="Left" Margin="44,200,0,0" VerticalAlignment="Top" Height="35" Width="388" Background="WhiteSmoke" Command="{Binding PregledKorisnika,Mode=TwoWay}"/>
+        <TextBlock x:Name="korisnikAdmin" HorizontalAlignment="Left" Margin="760,10,0,0" TextWrapping="Wrap" Text="admin" VerticalAlignment="Top"  FontFamily="Lato" FontStyle="Oblique" Foreground="DarkRed" FontSize="13"/>
 
     </Grid>
 </Page>

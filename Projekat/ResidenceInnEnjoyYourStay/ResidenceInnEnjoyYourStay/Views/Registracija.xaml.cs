@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Popups;
@@ -33,8 +34,10 @@ namespace ResidenceInnEnjoyYourStay.Views
             this.InitializeComponent();
             this.DataContext = new RegisterViewModel();
         }
-   
-    
+        Regex ImePrezime = new Regex("^[A-Z][a-z]{1,}$");
+        Regex username = new Regex("^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$");
+        Regex password = new Regex("^[a-zA-Z0-9]+[- _ @ # $ %]?[a-zA-Z0-9]*$");
+        Regex mail = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
     }
 }
 

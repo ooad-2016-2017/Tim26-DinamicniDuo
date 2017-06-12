@@ -64,7 +64,7 @@
 
         <Image Source="/Assets/night1.jpg" Stretch="Fill"/>
         <StackPanel x:Name ="Registerr" HorizontalAlignment="Left" Height="400" Margin="165,159,0,0" VerticalAlignment="Top" Width="495" Background="WhiteSmoke" BorderBrush="Black" BorderThickness="5" >
-            <TextBox x:Name="textBoxIme" HorizontalAlignment="Left" Height="29" Margin="40,70,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" Width="186" PlaceholderText="Ime"/>
+            <TextBox x:Name="textBoxIme" HorizontalAlignment="Left" Height="29" Margin="40,70,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" Width="186" PlaceholderText="Ime" />
             <TextBox x:Name="textBoxEmail" HorizontalAlignment="Left" Height="29" Margin="40,50,0,0" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay}" Width="186" PlaceholderText="e-mail"/>
             <TextBox x:Name="textBoxKorisnik" HorizontalAlignment="Left" Height="29" Margin="252,-32,0,0" TextWrapping="Wrap" Text="{Binding Username, Mode=TwoWay}" Width="186" PlaceholderText="username"/>
             <TextBox x:Name="textBoxPrezime" HorizontalAlignment="Left" Height="29" Margin="252,-200,0,0" TextWrapping="Wrap" Text="{Binding Surname, Mode=TwoWay}" Width="186" PlaceholderText="Prezime"/>

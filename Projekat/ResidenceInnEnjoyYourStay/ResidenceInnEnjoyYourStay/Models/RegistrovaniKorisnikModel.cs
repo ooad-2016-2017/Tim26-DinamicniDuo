@@ -129,8 +129,8 @@ namespace ResidenceInnEnjoyYourStay.Models
         }
         private BitmapImage profilnaSlika;
 
-        private List<Oglasi> mojiOglasi;
-       private List<Oglasi> favoriti;
+        private List<OglasiModel> mojiOglasi;
+       private List<OglasiModel> favoriti;
 
         public RegistrovaniKorisnikModel(string im, string prez, DateTime datR, string us, string pass, string em, BitmapImage slika)
         {
@@ -165,7 +165,7 @@ namespace ResidenceInnEnjoyYourStay.Models
                 profilnaSlika = value;
             }
         }
-       public List<Oglasi> MojiOglasi
+       public List<OglasiModel> MojiOglasi
         {
             get
             {
@@ -179,7 +179,7 @@ namespace ResidenceInnEnjoyYourStay.Models
                 }
             }
         }
-        public List<Oglasi> Favoriti
+        public List<OglasiModel> Favoriti
         {
             get
             {

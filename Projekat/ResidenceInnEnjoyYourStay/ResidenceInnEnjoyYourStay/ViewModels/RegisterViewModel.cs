@@ -131,7 +131,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
         }
         public void Pocetna()
         {
-            ((Frame)Window.Current.Content).Navigate(typeof(PocetnaStrana), null);
+            ((Frame)Window.Current.Content).Navigate(typeof(PregledObjavaAdmin), null);
         }
 
         public ICommand RegisterCommand
@@ -153,10 +153,15 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
                 obj.password = Password;
                 obj.username = Username;
                 obj.datumRodjenja = new DateTime(1995,1,1);
-                userTableObj.InsertAsync(obj);
-                MessageDialog msgDialog = new MessageDialog("Uspješno ste registrovani.");
 
-                msgDialog.ShowAsync();
+                if (ImePrezime.IsMatch(Name) && ImePrezime.IsMatch(Surname) && username.IsMatch(Username) && password.IsMatch(Password) && mail.IsMatch(Email))
+                {
+
+                    userTableObj.InsertAsync(obj);
+                    MessageDialog msgDialog = new MessageDialog("Uspješno ste registrovani.");
+
+                    msgDialog.ShowAsync();
+                }
             }
             catch (Exception ex)
             {
@@ -165,26 +170,75 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
                 msgDialogError.ShowAsync();
             }
         }
-        public void Register2()
+        public void ImeCheck()
         {
 
             if (!ImePrezime.IsMatch(Name))
+            {
+                MessageDialog msgDialog = new MessageDialog("Unesite ispravno ime.");
+
+                msgDialog.ShowAsync();
+            }
                 ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Unesite ispravno ime");
-            else if (!ImePrezime.IsMatch(Surname))
-                ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Unesite ispravno prezime");
-            else if (!username.IsMatch(Username))
-                ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Niste unijeli ispravan format korisnickog imena");
-            else if (!password.IsMatch(Password))
-                ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Niste unijeli ispravan format sifre");
-            else if (!mail.IsMatch(Email))
-                ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Niste unijeli ispravan e-mail");
-            else if (Password != Password2)
-                ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Šifre se ne podudaraju");
-            else if (ImePrezime.IsMatch(Name) && ImePrezime.IsMatch(Surname) && username.IsMatch(Username) && password.IsMatch(Password) && mail.IsMatch(Email))
-                ((Frame)Window.Current.Content).Navigate(typeof(Registracija), "Uspješno ste registrovani");
-
-
         }
+        public void PrezimeCheck()
+        {
+
+            if (!ImePrezime.IsMatch(Surname))
+            {
+                MessageDialog msgDialog = new MessageDialog("Unesite ispravno ime.");
+
+                msgDialog.ShowAsync();
+            }
+           
+        }
+        public void UsernameCheck()
+        {
+
+            if (!username.IsMatch(Username))
+            {
+                MessageDialog msgDialog = new MessageDialog("Niste unijeli ispravan format korisnickog imena.");
+
+                msgDialog.ShowAsync();
+            }
+         
+        }
+        public void PasswordCheck()
+        {
+
+            if (!password.IsMatch(Password))
+            {
+                MessageDialog msgDialog = new MessageDialog("Niste unijeli ispravan format sifre.");
+
+                msgDialog.ShowAsync();
+            }
+           
+        }
+        public void EmailCheck()
+        {
+
+            if (!mail.IsMatch(Email))
+            {
+                MessageDialog msgDialog = new MessageDialog("Niste unijeli ispravan e-mail.");
+
+                msgDialog.ShowAsync();
+            }
+           
+        }
+        public void PassMatchCheck()
+        {
+
+            if (Password != Password2)
+            {
+                MessageDialog msgDialog = new MessageDialog("Šifre se ne podudaraju.");
+
+                msgDialog.ShowAsync();
+            }
+         
+        }
+         
+
+        
         
     }
 }

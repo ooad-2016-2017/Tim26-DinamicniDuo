@@ -52,8 +52,8 @@ namespace ResidenceInnEnjoyYourStay.DataSrource
         #endregion
 
         #region Oglasi
-        private static List<Oglasi> oglasi = new List<Oglasi>() {
-            new Oglasi()
+        private static List<OglasiModel> oglasi = new List<OglasiModel>() {
+            new OglasiModel()
             {
                 Lokacija="Otoka",
                 Cijena=250,
@@ -64,7 +64,7 @@ namespace ResidenceInnEnjoyYourStay.DataSrource
                 NaslovnaSlika=new Windows.UI.Xaml.Media.Imaging.BitmapImage(new Uri("ms-appx:///Assets/soba2.jpg")),
 
             },
-            new Oglasi()
+            new OglasiModel()
             {
                 Lokacija="Dobrinja",
                 Cijena=120,
@@ -75,11 +75,11 @@ namespace ResidenceInnEnjoyYourStay.DataSrource
                 NaslovnaSlika =new Windows.UI.Xaml.Media.Imaging.BitmapImage(new Uri("ms-appx:///Assets/soba2.jpg"))
             }
         };
-        public static IList<Oglasi> DajsveOglase()
+        public static IList<OglasiModel> DajsveOglase()
         {
             return oglasi;
         }
-        public static IList<Oglasi> DajOglase(String lokacija, int cijena)
+        public static IList<OglasiModel> DajOglase(String lokacija, int cijena)
         {
             return oglasi.FindAll(k => k.Lokacija == lokacija && k.Cijena == cijena);
         }
@@ -88,9 +88,9 @@ namespace ResidenceInnEnjoyYourStay.DataSrource
         #region sponzorisani oglasi
         private static List<SponzorisaniOglasi> sponzorisaniOglasi = new List<SponzorisaniOglasi>();
 
-        public void sponzorisiOlgas(Oglasi og,int cijena,int trajanje, DateTime pocetak)
+        public void sponzorisiOlgas(OglasiModel og,int cijena,int trajanje, DateTime pocetak)
         {
-            SponzorisaniOglasi sponzi = new SponzorisaniOglasi(og.Lokacija, og.Cijena, og.TipSmjestaja, og.BrojSoba, og.DodatnePogodnosti, og.BrojOsoba, og.NaslovnaSlika, cijena, trajanje, pocetak);
+            SponzorisaniOglasi sponzi = new SponzorisaniOglasi(og.Naziv,og.Lokacija, og.Cijena, og.TipSmjestaja, og.BrojSoba, og.DodatnePogodnosti, og.BrojOsoba, og.NaslovnaSlika, cijena, trajanje, pocetak);
             sponzorisaniOglasi.Add(sponzi);
         }
         public static IList<SponzorisaniOglasi> DajSveSponzorisane()
@@ -101,9 +101,9 @@ namespace ResidenceInnEnjoyYourStay.DataSrource
 
         #region rezervisani oglasi
         private static List<RezervisaniOglasi> rezervisaniOglasi = new List<RezervisaniOglasi>();
-        public void rezervisiOglas(Oglasi og,DateTime prijava,DateTime odjava)
+        public void rezervisiOglas(OglasiModel og,DateTime prijava,DateTime odjava)
         {
-            RezervisaniOglasi reserved = new RezervisaniOglasi(og.Lokacija, og.Cijena, og.TipSmjestaja, og.BrojSoba, og.DodatnePogodnosti, og.BrojOsoba, og.NaslovnaSlika, prijava, odjava);
+            RezervisaniOglasi reserved = new RezervisaniOglasi(og.Naziv, og.Lokacija, og.Cijena, og.TipSmjestaja, og.BrojSoba, og.DodatnePogodnosti, og.BrojOsoba, og.NaslovnaSlika, prijava, odjava);
             rezervisaniOglasi.Add(reserved);
         }
         public static IList<RezervisaniOglasi> DajSveRezervisane()

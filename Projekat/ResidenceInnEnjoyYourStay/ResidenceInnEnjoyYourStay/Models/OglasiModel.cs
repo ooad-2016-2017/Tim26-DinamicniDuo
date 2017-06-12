@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace ResidenceInnEnjoyYourStay.Models
 {
-    public class Oglasi : BazniOglasi
+    public class OglasiModel : BazniOglasi
     {
       
        private int id { get; set; }
@@ -27,12 +27,12 @@ namespace ResidenceInnEnjoyYourStay.Models
             }
        }
 
-        public Oglasi(String lokacija, int cijena, String tip, int brojSoba, String pogodnosti, int brojOsoba, BitmapImage naslovna) : base(lokacija,cijena,tip,brojSoba,pogodnosti,brojOsoba,naslovna) { }
+        public OglasiModel(String naziv,String lokacija, int cijena, String tip, int brojSoba, String pogodnosti, int brojOsoba, BitmapImage naslovna) : base(naziv,lokacija,cijena,tip,brojSoba,pogodnosti,brojOsoba,naslovna) { }
         public void Rezervisi()
         {
 
         }
-        public Oglasi():base() { }
+        public OglasiModel():base() { }
         public void Sponzorisi()
         {
 

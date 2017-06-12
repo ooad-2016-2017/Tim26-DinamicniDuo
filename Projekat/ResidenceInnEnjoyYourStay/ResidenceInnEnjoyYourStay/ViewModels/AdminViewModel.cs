@@ -1,6 +1,7 @@
 ﻿
 using ResidenceInnEnjoyYourStay.Models;
 using ResidenceInnEnjoyYourStay.Pomocne;
+using ResidenceInnEnjoyYourStay.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,90 +11,77 @@ using System.Windows.Input;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace ResidenceInnEnjoyYourStay.ViewModels
 {
     public class AdminViewModel
     {
-       
-        INavigationService INS { get; set; }
-        ICommand login
-        {
-            get; set;
-        }
-        ICommand registracija
-        {
-            get; set;
-        }
-        ICommand zabSifra
-        {
-            get; set;
-        }
-       
-   
-        public String AdminIme { get; set; }
-        public String AdminSifra { get; set; }
+        private ICommand back;
+        private ICommand pocetna;
+        private ICommand logout;
+        private ICommand korisnici;
+        private ICommand objave;
 
-        public List<RegistrovaniKorisnikModel> ListaKorisnika = new List<RegistrovaniKorisnikModel>();
-     
-        public ICommand Login
+        public ICommand LogoutCommand
         {
             get
             {
-                return login;
-            }
-
-            set
-            {
-                login = value;
+                return logout ?? (logout = new CommandHandler(() => Logout(), true));
             }
         }
-
- 
-        public AdminViewModel()
+        public void Logout()
         {
-            
-            ListaKorisnika = new List<RegistrovaniKorisnikModel>();
-       
-            Login = new RelayCommand<object>(registrujAdmina, potvrdi);
-     
-
+            ((Frame)Window.Current.Content).Navigate(typeof(PregledObjavaAdmin), null);
         }
-
-        public ICommand RegistrujSe
+        public ICommand PregledObjava
         {
             get
             {
-                INS.Navigate(typeof(Register));
-                return registracija;
+                return objave ?? (objave = new CommandHandler(() => Objava(), true));
             }
-            set
+        }
+        public void Objava()
+        {
+            ((Frame)Window.Current.Content).Navigate(typeof(PregledObjavaAdmin), null);
+        }
+        public ICommand PregledKorisnika
+        {
+            get
             {
-                registracija = value;
+                return korisnici ?? (korisnici = new CommandHandler(() => Korisnici(), true));
             }
-
         }
-       
-        public bool potvrdi(Object o)
+        public void Korisnici()
         {
-            if (AdminIme == "admin" && AdminSifra == "dinamicniduo")
+            ((Frame)Window.Current.Content).Navigate(typeof(pregledNalogaAdmin), null);
+        }
+        public ICommand BackCommand
+        {
+            get
             {
-                return true;
+                return back ?? (back = new CommandHandler(() => Nazad(), true));
             }
-            return false;
         }
-
-        public void registrujAdmina(Object o)
+        public void Nazad()
         {
-           
+            ((Frame)Window.Current.Content).Navigate(typeof(LoginView), null);
         }
 
-        public bool boolDodaj(Object o)
+        public ICommand PocetnaCommand
         {
-            return true;
+            get
+            {
+                return pocetna ?? (pocetna = new CommandHandler(() => Pocetna(), true));
+            }
+        }
+        public void Pocetna()
+        {
+            ((Frame)Window.Current.Content).Navigate(typeof(PregledObjavaAdmin), null);
         }
 
-    
+
+
 
     }
 }

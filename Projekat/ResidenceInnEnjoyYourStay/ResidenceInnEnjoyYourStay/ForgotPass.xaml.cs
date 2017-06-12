@@ -18,7 +18,7 @@ namespace ResidenceInnEnjoyYourStay
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(PocetnaStrana), null);
+            this.Frame.Navigate(typeof(PregledObjavaAdmin), null);
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)

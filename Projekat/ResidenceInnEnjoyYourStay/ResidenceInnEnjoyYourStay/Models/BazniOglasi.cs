@@ -11,16 +11,18 @@ namespace ResidenceInnEnjoyYourStay.Models
     public abstract class BazniOglasi : MainViewModelBase
     {
         private String lokacija;
+        private String naziv;
         private int cijena;
         private String tipSmjestaja;
         private int brojSoba;
         private String dodatnePogodnosti;
         private int brojOsoba;
-        private BitmapImage naslovnaSlika;
-        private List<BitmapImage> slikeOglasa;
+        private BitmapImage naslovnaSlika = null;
+        private List<BitmapImage> slikeOglasa = null;
 
-        public BazniOglasi(String lokacija, int cijena, String tip, int brojSoba, String pogodnosti, int brojOsoba, BitmapImage naslovna)
+        public BazniOglasi(String naziv, String lokacija, int cijena, String tip, int brojSoba, String pogodnosti, int brojOsoba, BitmapImage naslovna)
         {
+            this.naziv = naziv;
             this.lokacija = lokacija;
             this.cijena = cijena;
             this.tipSmjestaja = tip;
@@ -49,7 +51,18 @@ namespace ResidenceInnEnjoyYourStay.Models
                 }
             }
         }
-
+        public String Naziv
+        {
+            get
+            {
+                return naziv;
+            }
+            set
+            {
+                naziv = value;
+                OnPropertyChanged("Naziv");
+            }
+        }
         public BitmapImage NaslovnaSlika
         {
             get

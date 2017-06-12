@@ -6,20 +6,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
     xmlns:ResidenceInnEnjoyYourStay="using:ResidenceInnEnjoyYourStay"
-    x:Class="ResidenceInnEnjoyYourStay.Views.PocetnaStrana"
+    x:Class="ResidenceInnEnjoyYourStay.Views.PregledObjavaAdmin"
     mc:Ignorable="d" Width="834.197">
 
-    <Grid  Background="#FFDEDEDE" >
+    <Grid  Background="#FFDEDEDE" Margin="0,0,0.333,0" >
 
-        <Image Source="/Assets/night1.jpg" Stretch="Fill" Margin="10,10,-10,-10" />
+        <Image Source="/Assets/night1.jpg" Stretch="Fill" Margin="0,10,0,-10" />
 
-        <SplitView HorizontalAlignment="Left" Height="35" Margin="10,3,0,0" VerticalAlignment="Top" Width="373" Background="WhiteSmoke" BorderBrush="Transparent">
+        <SplitView HorizontalAlignment="Left" Height="35" Margin="0,0,0,0" VerticalAlignment="Top" Width="383" Background="WhiteSmoke" BorderBrush="Transparent">
             <SplitView.Pane>
                 <Grid/>
             </SplitView.Pane>
-            <StackPanel HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="248">
-                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="29" Margin="10,2,0,0" TextWrapping="Wrap" Text="" Width="228" PlaceholderText="Traži hotel" FontStyle="Oblique" BorderBrush="Transparent"  SelectionHighlightColor="LightBlue" />
-                <Button x:Name="button"  FontFamily="Segoe MDL2 Assets"  Content = "&#xE094;" HorizontalAlignment="Left" Height="27" Margin="190,-30,0,0" Width="50" Background="Transparent"/>
+            <StackPanel HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="238" Margin="10,0,0,0">
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="29" Margin="10,2,0,0" TextWrapping="Wrap" Text="{Binding Naziv, Mode=TwoWay}" Width="228" PlaceholderText="Traži hotel" FontStyle="Oblique" BorderBrush="Transparent"  SelectionHighlightColor="LightBlue" />
+                <Button x:Name="button"  FontFamily="Segoe MDL2 Assets"  Content = "&#xE094;" Command="{Binding TraziCommand, Mode=TwoWay}" HorizontalAlignment="Left" Height="27" Margin="190,-30,0,0" Width="50" Background="Transparent"/>
                 <StackPanel Height="29" Width="200" Margin="615,-35,0,0">
                     <Button x:Name="LoginRegister"   FontFamily="Segoe MDL2 Assets"  Content = "&#xE094;" Command="{Binding LoginCommand}"  Width="100" Height="29" Background="Transparent" Margin="0,0,0,0" HorizontalAlignment="Right"/>
                 </StackPanel>
@@ -30,36 +30,31 @@
 
 
         </SplitView>
-        <SplitView Height="35" Width="470" Margin="373,3,0,0" VerticalAlignment="Top" Background="WhiteSmoke" BorderBrush="Transparent">
+        <SplitView Height="35" Width="470" Margin="373,0,0,0" VerticalAlignment="Top" Background="WhiteSmoke" BorderBrush="Transparent">
             <SplitView.Pane>
                 <Grid/>
             </SplitView.Pane>
-            <Button x:Name="button1" Content="Login/Register" FontStyle="Oblique" Command="{Binding LoginCommand, Mode=TwoWay}" HorizontalContentAlignment="Right" FontWeight="Medium" Foreground="Black" HorizontalAlignment="Left" Height="35" Margin="320,0,0,0" VerticalAlignment="Top" Width="122" Background="Transparent"/>
+            <Button x:Name="button1" Content="Login/Register" FontStyle="Normal" Command="{Binding LoginCommand, Mode=TwoWay}" HorizontalContentAlignment="Right" FontWeight="Medium" Foreground="Black" HorizontalAlignment="Left" Height="35" Margin="320,0,0,0" VerticalAlignment="Top" Width="122" Background="Transparent" FontFamily="Lato"/>
         </SplitView>
+        <Button x:Name="Odjava" Content="Logout"  FontStyle="Normal" Command="{Binding LogoutCommand, Mode=TwoWay}" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Height="35" Margin="750,0,0,0" VerticalAlignment="Top" Width="65" Background="Transparent" RenderTransformOrigin="0.5,0.543" Visibility="Collapsed" FontFamily="Lato"/>
 
 
         <Maps:MapControl x:Name="mapa" Grid.Row="3"  HorizontalAlignment="Left" Height="250" Margin="10,320,0,0" VerticalAlignment="Top" Width="414"  BusinessLandmarksVisible="True" LandmarksVisible="True" MapServiceToken = "YEQFMWAVjF4Iu91p0wyj~RelW8it8t3jIg90ou8-EuQ~AqgHYFSq5bzGjAvlJRlbaT0XAX1p8kd7rfVjJ7eRhGqhaz7T_kwxf3gZ7vrsh-Ob" />
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="50,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" PlaceholderText="Location" FontStyle="Italic"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="50,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110" PlaceholderText="Max. price" FontStyle="Italic"/>
-        <CalendarDatePicker HorizontalAlignment="Left" Margin="200,100,0,0" VerticalAlignment="Top" />
-        <CalendarDatePicker HorizontalAlignment="Left" Margin="200,167,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="50,234,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <Button x:Name="button2" FontFamily="Segoe MDL2 Assets" Content="&#xE094;" HorizontalAlignment="Left" Margin="290,234,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.369,-0.5" FontWeight="Black" Background="Transparent"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="50,103,0,0" TextWrapping="Wrap" Text="{Binding Lokacija, Mode=TwoWay}" VerticalAlignment="Top" Width="200" PlaceholderText="Location" FontStyle="Italic"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Width="200" Margin="50,167,0,0" TextWrapping="Wrap" Text="{Binding MaxCijena, Mode=TwoWay}" VerticalAlignment="Top"  PlaceholderText="Max. price" FontStyle="Italic"/>
+        <CalendarDatePicker HorizontalAlignment="Left" Margin="300,100,0,0" VerticalAlignment="Top" Width="200" />
+        <CalendarDatePicker HorizontalAlignment="Left" Margin="300,167,0,0" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="50,234,0,0" TextWrapping="Wrap" Text="{Binding BrojOsoba, Mode=TwoWay}" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="button2" FontFamily="Segoe MDL2 Assets" Content="&#xE094;" Command="{Binding SearchCommand, Mode=TwoWay}" HorizontalAlignment="Left" Margin="470,234,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.369,-0.5" FontWeight="Black" Background="Transparent"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="29" Margin="50,70,0,0" TextWrapping="Wrap" Text="Lokacija" VerticalAlignment="Top" Width="71" FontWeight="Black"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="29" Margin="50,138,0,0" TextWrapping="Wrap" Text="Maksimalna cijena" VerticalAlignment="Top" Width="150" FontWeight="Black"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="29" Margin="50,204,0,0" TextWrapping="Wrap" Text="Broj osoba" VerticalAlignment="Top" Width="80" FontWeight="Black"/>
-        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="29" Margin="200,70,0,0" TextWrapping="Wrap" Text="Datum prijave" VerticalAlignment="Top" Width="120" FontWeight="Black"/>
-        <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="29" Margin="200,139,0,0" TextWrapping="Wrap" Text="Datum odjave" VerticalAlignment="Top" Width="120" FontWeight="Black"/>
-        <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Height="28" Margin="252,235,0,0" TextWrapping="Wrap" Text="Traži" VerticalAlignment="Top" Width="40" FontWeight="Black" FontStyle="Italic"/>
-        <TextBlock x:Name="korisnik" Foreground="Black" HorizontalAlignment="Left" Height="22" Margin="600,8,0,0" TextWrapping="Wrap" Text ="{Binding parameters, Mode = TwoWay}"  VerticalAlignment="Top" Width="98"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="470" VerticalAlignment="Top" Width="228" Margin="541,100,0,0">
-            <ItemsControl x:Name="Lista">
-                <Image x:Name="Slika" Width="170" Height="140" />
-            <TextBlock x:Name="Adresa" Width="150" Height="35" />
-            <TextBlock x:Name="Cijena" Width="150" Height="35" />
-                <Hyperlink x:Name="PrikaziVise"/>
-                </ItemsControl>
-        </ListView>
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="29" Margin="300,70,0,0" TextWrapping="Wrap" Text="Datum prijave" VerticalAlignment="Top" Width="120" FontWeight="Black"/>
+        <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="29" Margin="300,139,0,0" TextWrapping="Wrap" Text="Datum odjave" VerticalAlignment="Top" Width="120" FontWeight="Black"/>
+        <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Height="28" Margin="422,235,0,0" TextWrapping="Wrap" Text="Traži" VerticalAlignment="Top" Width="40" FontWeight="Black" FontStyle="Italic"/>
+        <TextBlock x:Name="korisnik"  HorizontalAlignment="Left" Height="22" Margin="690,10,0,0" TextWrapping="Wrap" Text ="{Binding parameters, Mode = TwoWay}"  VerticalAlignment="Top" Width="98" FontFamily="Lato" Foreground="DarkRed" FontSize="13" FontStyle="Oblique"/>
+       
+
 
     </Grid>
 </Page>

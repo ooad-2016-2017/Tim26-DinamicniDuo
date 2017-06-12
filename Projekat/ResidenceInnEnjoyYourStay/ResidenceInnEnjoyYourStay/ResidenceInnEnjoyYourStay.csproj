@@ -98,6 +98,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Azure\Oglasi.cs" />
     <Compile Include="Azure\RegistrovaniKorisnik.cs" />
     <Compile Include="DataSource\DataSource.cs" />
     <Compile Include="ForgotPass.xaml.cs">
@@ -111,7 +112,7 @@
     <Compile Include="Pomocne\MainViewModelBase.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\BazniOglasi.cs" />
-    <Compile Include="Models\Oglasi.cs" />
+    <Compile Include="Models\OglasiModel.cs" />
     <Compile Include="Models\Osoba.cs" />
     <Compile Include="Models\RegistrovaniKorisnikModel.cs" />
     <Compile Include="Models\RezervisaniOglasi.cs" />
@@ -167,6 +168,11 @@
     <Content Include="Assets\imagesuser.jpg" />
     <Content Include="Assets\night1.jpg" />
     <Content Include="Assets\PayPal.png" />
+    <Content Include="Assets\ResidenceInn.png" />
+    <Content Include="Assets\ResidenceInn2.png" />
+    <Content Include="Assets\ResidenceInn3.png" />
+    <Content Include="Assets\ResidenceInn4.png" />
+    <Content Include="Assets\ResidenceInnFinal.png" />
     <Content Include="Assets\soba2.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

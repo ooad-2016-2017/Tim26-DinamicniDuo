@@ -11,7 +11,7 @@ namespace ResidenceInnEnjoyYourStay.Models
     {
         private DateTime datumPrijave;
         private DateTime datumOdjave;
-        public RezervisaniOglasi(String lokacija, int cijena, String tip, int brojSoba, String pogodnosti, int brojOsoba, BitmapImage naslovna,DateTime prijava,DateTime odjava) : base(lokacija, cijena, tip, brojSoba, pogodnosti, brojOsoba, naslovna)
+        public RezervisaniOglasi(String naziv, String lokacija, int cijena, String Tip, int brojSoba, String pogodnosti, int brojOsoba, BitmapImage naslovna,DateTime prijava,DateTime odjava) : base(naziv,lokacija, cijena, Tip, brojSoba, pogodnosti, brojOsoba, naslovna)
         {
             this.datumPrijave = prijava;
             this.datumOdjave = odjava;

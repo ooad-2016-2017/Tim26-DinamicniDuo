@@ -13,7 +13,7 @@ namespace ResidenceInnEnjoyYourStay.Models
         private int rokTrajanja;
         private DateTime pocetakSponzorisanja;
 
-        public SponzorisaniOglasi(String lokacija, int cijena, String tip, int brojSoba, String pogodnosti, int brojOsoba, BitmapImage naslovna,int cijenaSponzo,int trajanje, DateTime pocetak) : base(lokacija, cijena, tip, brojSoba, pogodnosti, brojOsoba, naslovna)
+        public SponzorisaniOglasi(String naziv,String lokacija, int cijena, String tip, int brojSoba, String pogodnosti, int brojOsoba, BitmapImage naslovna,int cijenaSponzo,int trajanje, DateTime pocetak) : base(naziv,lokacija, cijena, tip, brojSoba, pogodnosti, brojOsoba, naslovna)
         {
             this.cijenaSponzorstva = cijenaSponzo;
             this.rokTrajanja = trajanje;

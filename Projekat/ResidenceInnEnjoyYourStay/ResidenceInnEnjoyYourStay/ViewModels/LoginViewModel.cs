@@ -5,12 +5,16 @@ using System.ComponentModel;
 using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-
+using ResidenceInnEnjoyYourStay.Azure;
+using Microsoft.WindowsAzure.MobileServices;
+using System.Collections.Generic;
+using Windows.UI.Popups;
 
 namespace ResidenceInnEnjoyYourStay.ViewModels
 {
     public class LoginViewModel
     {
+       
         private bool _isAuthenticated;
         public bool isAuthenticated
         {
@@ -45,8 +49,9 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
                 OnPropertyChanged("Password");
             }
         }
-        
+
         private ICommand login;
+      
         private ICommand register;
         private ICommand forgot;
         private ICommand back;
@@ -61,7 +66,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
         }
         public void Nazad()
         {
-            ((Frame)Window.Current.Content).Navigate(typeof(PocetnaStrana), null);
+            ((Frame)Window.Current.Content).Navigate(typeof(PregledObjavaAdmin), null);
         }
 
         public ICommand PocetnaCommand
@@ -73,7 +78,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
         }
         public void Pocetna()
         {
-            ((Frame)Window.Current.Content).Navigate(typeof(PocetnaStrana), null);
+            ((Frame)Window.Current.Content).Navigate(typeof(PregledObjavaAdmin), null);
         }
 
         public ICommand ForgotPasswordCommand
@@ -99,7 +104,7 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
         {
             ((Frame)Window.Current.Content).Navigate(typeof(Registracija), null);
         }
-
+      
         public ICommand LoginCommand
         {
             get
@@ -107,16 +112,51 @@ namespace ResidenceInnEnjoyYourStay.ViewModels
                 return login ?? (login = new CommandHandler(() => Login(), true));
             }
         }
-        
-       
-        public void Login()
+
+        IMobileServiceTable<RegistrovaniKorisnik> userTableObj = App.MobileService.GetTable<RegistrovaniKorisnik>();
+
+        //Data Source = tcp:residenceinnserver.database.windows.net,1433;Initial Catalog = ResidenceInnEnjoyYourStay; User ID = residenceinnadmin@residenceinnserver;Password=DinamicniDuo+
+        public async void Login()
         {
-           
-                if (!String.IsNullOrEmpty(UserName) && !String.IsNullOrEmpty(Password))
+            List<RegistrovaniKorisnik> table = await userTableObj.ToListAsync();
+
+            bool imaUser = false;
+            bool imaSifa = false;
+            if (!String.IsNullOrEmpty(UserName) && !String.IsNullOrEmpty(Password))
                 isAuthenticated = true;
-            if(UserName == "admin" && Password == "dinamicniduo")
+            if (UserName == "admin" && Password == "dinamicniduo")
                 ((Frame)Window.Current.Content).Navigate(typeof(AdminPanel), "admin");
-            
+            else
+            {
+                RegistrovaniKorisnik r = new RegistrovaniKorisnik();
+                for (int i = 0; i < table.Count; i++)
+                {
+                    r = table[i];
+                    if (r.username == UserName)
+                    {
+                        imaUser = true;
+                    }
+                    if (r.password == Password)
+                    {
+                        imaSifa = true;
+                    }
+
+                }
+                if (imaUser == true && imaSifa == true)
+                    ((Frame)Window.Current.Content).Navigate(typeof(PregledObjavaAdmin), UserName);
+                else if (imaUser == false)
+                {
+                    MessageDialog msgDialog = new MessageDialog("Ne postoji korisnik sa datim korisničkim imenom.");
+
+                    msgDialog.ShowAsync();
+                }
+                else if (imaUser == true && imaSifa == false)
+                {
+                    MessageDialog msgDialog = new MessageDialog("Niste unijeli ispravnu sifru.");
+
+                    msgDialog.ShowAsync();
+                }
+            }
 
         }
 

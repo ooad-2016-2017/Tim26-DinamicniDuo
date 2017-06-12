@@ -36,7 +36,7 @@ namespace ResidenceInnEnjoyYourStay.Views
              text = e.Parameter as string;
             if (text != null)
             {
-                textBlock4.Text = text;
+                textBlock4.Text = "A reset code was sent to your e-mail adress.";
               
             }
         }

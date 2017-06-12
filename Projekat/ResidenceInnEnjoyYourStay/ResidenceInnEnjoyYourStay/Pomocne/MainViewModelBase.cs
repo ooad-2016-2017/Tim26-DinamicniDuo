@@ -32,7 +32,7 @@ namespace ResidenceInnEnjoyYourStay.Pomocne
         INavigationService INS { get; set; }
         public void Login()
         {
-            INS.Navigate(typeof(PocetnaStrana), null);
+            INS.Navigate(typeof(PregledObjavaAdmin), null);
         }
 
     }

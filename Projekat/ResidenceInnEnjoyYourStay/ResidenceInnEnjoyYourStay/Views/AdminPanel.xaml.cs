@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ResidenceInnEnjoyYourStay.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace ResidenceInnEnjoyYourStay.Views
         public AdminPanel()
         {
             this.InitializeComponent();
+            this.DataContext = new AdminViewModel();
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
